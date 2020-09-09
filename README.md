@@ -56,7 +56,7 @@ Introducing Cultured, a website where you choose a country, and you are immersed
 	- Name, language spoken, country code, phone code, flag emoji, country capital, and the currencies for all countries
 	- Download data for free
 
-### Competition
+### Competition >:|
 - [Commisceo Global](https://www.commisceo-global.com/resources/country-guides)
 	- Provides good info about culture for 80+ countries
 	- Pretty boring UI, not very interactive
