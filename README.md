@@ -1,5 +1,7 @@
 # Cultured
 
+#yeet skeet leet reet delete
+
 ### Overview
 Introducing Cultured, a website where you choose a country, and you are immersed in music/news/entertainment from that country
 
