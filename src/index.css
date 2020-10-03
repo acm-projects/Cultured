@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.bar {
+  display: grid;
+  grid-template-columns: 650px auto auto auto;
+  align-content: center;
+  background-color: #f9ada0;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  height: 40px;
+  font-size: 18px;
+}
+
+.logo{
+  font-size: 20px;
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+h1 {
+  
+}
+
+.container {
+  text-align: center;
+  background-color: #CC1F0D;
+  padding: 20px;
+}
+
+.welcome {
+  background-color: #f9ada0;
+  padding: 1px;
+}
+
+.background {
+  background-color: white;
+  padding: 30px;
+}
+
+.map {
+  height: 150px;
+  padding: 100px;
+  background-color: #3f88c5;
+  margin-top: 20px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 200px 200px;
+  justify-content: space-evenly;
+  padding: 10px;
+  
+}
+
+.b {
+  border: 1px solid black;
+  padding: 10px;
+  background-color: #f9ada0;
+}
+
+.dropdown {
+  padding: 10px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.left-col {
+  padding: 50px;
+  text-align: left;
+}
+
+.right-col {
+  display: grid;
+  grid-template-columns: 50% 50%;  
+  text-align: left;
+}
+
+.description {
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.footer {
+  text-align: left;
+  background-color: #3f88c5;
+  padding: 3px;
+}
