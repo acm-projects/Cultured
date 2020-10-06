@@ -34,10 +34,19 @@ h1 {
   
 }
 
+/*
 .container {
   text-align: center;
   background-color: #CC1F0D;
   padding: 20px;
+}*/
+
+.culture-red {
+  background-color: #f9ada0;
+}
+
+.flavor-line {
+  padding: 1px;
 }
 
 .welcome {
