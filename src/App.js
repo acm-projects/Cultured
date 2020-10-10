@@ -1,8 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 
-import {Container, Row, Col, NavBar, Button, Form} from 'react-bootstrap';
+/*
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from "react-router-dom";
+*/
+
+//import {Container, Row, Col, NavBar, Button, Form, Card} from 'react-bootstrap';
+
+//import Frontpage from "./pages/Frontpage";
+//import Countrypage from "./pages/Countrypage";
 
 class FrontPage extends React.Component{
   constructor(props){
@@ -186,6 +198,168 @@ class NavBarBS extends React.Component{
   
 }
 
+class CountryPage extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  
+  render() {
+    return (
+        
+<div>
+    <div class="container-fluid  mt-4 ">
+      
+        {/*top row FIXME: format columbs to same height?*/}    
+        <div class="row">
+            {/*country title*/}    
+          <div class="col-lg-4">
+            <div class="card m-2">
+              <div class="card-body">
+                <h5 class="card-title">Country Title</h5>
+                <p class="card-text">Hello from Country</p>
+              </div>
+            </div>
+          </div>
+        
+        
+        <div class="col-lg-4">
+            <div class="row">
+        
+        {/*flag*/}
+        <div class="col-6 col-2-md">
+            <div class=" card m-2">
+              <div class="card-body">
+                <img class="card-img-top" src="..." alt="Card image cap"/>
+              </div>
+            </div>
+        </div>
+        
+        {/*Time*/}
+        <div class="col-6 col-2-md">
+            <div class=" card m-2">
+              <div class="card-body">
+                <h5 class="card-title">Time</h5>
+                <p class="card-text">00:00</p>
+              </div>
+            </div>
+        </div>
+
+            </div>
+          </div>
+        
+        {/*weather*/}
+          <div class="col-lg-4">
+            <div class="card m-2">
+              <div class="card-body">
+                <h5 class="card-title">Weather</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+        
+    <div class="card-columns col">
+
+        {/*fast facts*/}
+        <div class=" card m-2">
+          <div class="card-body">
+            <h5 class="card-title">Fast Facts</h5>
+            <p class="card-text">[facts]</p>
+          </div>
+        </div> 
+        
+        {/*food*/}
+        <div class=" card m-2">
+          <div class="card-body">
+            <h5 class="card-title">Food</h5>
+            <p class="card-text">Food</p>
+          </div>
+        </div> 
+        
+        {/*clothing*/}
+        <div class=" card m-2">
+          <div class="card-body">
+            <h5 class="card-title">Clothes</h5>
+            <p class="card-text">Clothes</p>
+          </div>
+        </div> 
+        
+        {/*religion*/}
+        <div class=" card m-2">
+          <div class="card-body">
+            <h5 class="card-title">Religion</h5>
+            <p class="card-text">Relgion</p>
+          </div>
+        </div> 
+        
+        {/*music*/}
+        <div class=" card m-2">
+          <div class="card-body">
+            <h5 class="card-title">Music</h5>
+            <p class="card-text">music</p>
+          </div>
+        </div> 
+        
+        {/*news*/}
+        <div class=" card m-2">
+          <div class="card-body">
+            <h5 class="card-title">News</h5>
+            <p class="card-text">news</p>
+          </div>
+        </div> 
+        
+        {/*taboo things*/}
+        <div class=" card m-2">
+          <div class="card-body">
+            <h5 class="card-title">Taboo things</h5>
+            <p class="card-text">[text]</p>
+          </div>
+        </div> 
+        
+        {/*popular spots*/}
+        <div class=" card m-2">
+          <div class="card-body">
+            <h5 class="card-title">Sports</h5>
+            <p class="card-text">[text]</p>
+          </div>
+        </div> 
+        
+        {/*interesting history*/}
+        <div class=" card m-2">
+          <div class="card-body">
+            <h5 class="card-title">History</h5>
+            <p class="card-text">[text]</p>
+          </div>
+        </div> 
+        
+    </div>
+        
+        
+    {/*buttons*/}
+    <div class="row mt-4">
+        {/*previous button*/}
+        <div class="col-6">
+            <div class="btn btn-outline-light">
+                <h3>Previous</h3>
+            </div>
+        </div>
+        
+        {/*next button*/}
+        <div class="col-6">
+            <div class="btn btn-outline-light">
+                <h3>Next</h3>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+    ); 
+  }
+  
+}
+
 function App() {
   return (
       
@@ -200,16 +374,32 @@ function App() {
       ReactDOM.render(<FrontPage />, document.getElementById('page'));
         
     </div>
-
-    
-    
-    
-
-
+          ReactDOM.render(<CountryPage />, document.getElementById('country'));
     </div>
 
   );
 }
+
+
+/* FIXME: routing does not work
+function App() {
+    
+  return (
+    <div>
+      <Router>
+        <main>
+          <Switch>
+            <Route path="/" exact component={Frontpage} />
+            <Route path="/add" exact component={Countrypage} />
+            <Redirect to="/" />
+
+          </Switch>
+        </main>
+      </Router>
+    </div>
+  );
+}
+*/
 
 export default App;
 
