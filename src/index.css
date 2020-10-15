@@ -7,6 +7,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/*this is sizing for the columns*/
+@media (min-width: 34em) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (min-width: 75em) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -34,10 +51,19 @@ h1 {
   
 }
 
+/*
 .container {
   text-align: center;
   background-color: #CC1F0D;
   padding: 20px;
+}*/
+
+.culture-red {
+  background-color: #f9ada0;
+}
+
+.flavor-line {
+  padding: 1px;
 }
 
 .welcome {
