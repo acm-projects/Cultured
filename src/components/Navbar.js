@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Navbar(props) {
-  const recipe = props.recipe;
-  return (
-<div>
+class Navbar extends React.Component{
+    render(){
+        return(
+                <div>
         
         {/*navbar container*/}
         <nav class="navbar navbar-expand-lg bg-danger fixed-top">
@@ -11,7 +11,7 @@ function Navbar(props) {
             {/*FIXME: expand button is missing*/}
         
             {/*logo*/}
-            <a class="navbar-brand logo text-dark" href="#">CULTURED</a>
+            <a class="navbar-brand logo text-dark" href="/">CULTURED</a>
         
             {/*collapsed navbar button*/}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,10 @@ function Navbar(props) {
         
         </nav>
 </div>
-  );
+        );
+
+    }
+    
 }
 
 export default Navbar;
