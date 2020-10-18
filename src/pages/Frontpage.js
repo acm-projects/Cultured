@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Map from "../components/map/Map"
+
 class frontPage extends React.Component{
   constructor(props){
     super(props);
@@ -21,11 +23,14 @@ class frontPage extends React.Component{
         {/*map*/}
         <div className="row">
             <div className="col text-center">
+        ReactDOM.render(<Map/>, document.getElementById('root'));
                 <div className="map">
                   <h1> map </h1>
                 </div>
             </div>
         </div>
+        
+
         
         {/*control buttons*/}
         <div className="row mt-4 mb-4">
