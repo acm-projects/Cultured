@@ -1,6 +1,8 @@
+//this one exists for debugging by tearing a component apart
+
 import React from 'react'
 
-class countryPage extends React.Component{
+class countryTrash extends React.Component{
   constructor(props){
     super(props);
   }
@@ -161,4 +163,4 @@ class countryPage extends React.Component{
   
 }
 
-export default countryPage
+export default countryTrash
