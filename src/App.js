@@ -36,6 +36,10 @@ function App() {
             <Route path="/" exact component={frontPage} />
             <Route path="/Country" exact component={countryPage} />
             <Route path="/yeet" exact component={countryTrash} />
+            <Route path="/Atlantis" exact component={countryPage} />
+            <Route path="/Wakanda" exact component={countryTrash} />
+            <Route path="/Narnia" exact component={countryPage} />
+            <Route path="/Alagaesia" exact component={countryTrash} />
             <Redirect to="/" />
           </Switch>
         </main>
