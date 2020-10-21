@@ -7,16 +7,40 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,body { height: 100%; width: 100%; margin: 0px; padding: 0px; }
+
+
+/*this is sizing for the columns*/
+@media (min-width: 34em) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (min-width: 75em) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.full-height{
+    min-height: 100vh;
 }
 
 .bar {
   display: grid;
   grid-template-columns: 650px auto auto auto;
   align-content: center;
-  background-color: #f9ada0;
+  background-color: #f04a4a;
   top: 0;
   left: 0;
   padding: 5px;
@@ -30,72 +54,18 @@ code {
   font-weight: bold;
 }
 
-h1 {
-  
+.culture-red {
+  background-color: #f04a4a;
 }
 
-.container {
-  text-align: center;
-  background-color: #CC1F0D;
-  padding: 20px;
-}
-
-.welcome {
-  background-color: #f9ada0;
+.flavor-line {
   padding: 1px;
 }
 
-.background {
-  background-color: white;
-  padding: 30px;
-}
 
 .map {
   height: 150px;
   padding: 100px;
   background-color: #3f88c5;
   margin-top: 20px;
-}
-
-.buttons {
-  display: grid;
-  grid-template-columns: 200px 200px;
-  justify-content: space-evenly;
-  padding: 10px;
-  
-}
-
-.b {
-  border: 1px solid black;
-  padding: 10px;
-  background-color: #f9ada0;
-}
-
-.dropdown {
-  padding: 10px;
-  border: 1px solid black;
-  display: grid;
-  grid-template-columns: 30% 70%;
-}
-
-.left-col {
-  padding: 50px;
-  text-align: left;
-}
-
-.right-col {
-  display: grid;
-  grid-template-columns: 50% 50%;  
-  text-align: left;
-}
-
-.description {
-  margin-top: 30px;
-  padding: 10px;
-}
-
-.footer {
-  text-align: left;
-  background-color: #3f88c5;
-  padding: 3px;
 }

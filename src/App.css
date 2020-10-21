@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+    background-color: #a32a21;
+    /*
+    this colors the background of the app
+    also good color, but not for use here:   #eb4034;
+    */
 }
 
 .App-logo {
