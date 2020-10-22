@@ -10,7 +10,7 @@ import {
 
 //import components
 import Navbar from "./components/Navbar"
-import frontPage from "./pages/frontPage"
+import frontPage from "./pages/Frontpage"
 import countryPage from "./pages/countryPage"
 import countryTrash from "./pages/countryTrash"
 
