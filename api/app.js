@@ -17,7 +17,7 @@ var app = express();
 
 const api_helper = require('./API_helper');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

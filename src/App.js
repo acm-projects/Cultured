@@ -11,7 +11,7 @@ import {
 //import components
 import Navbar from "./components/Navbar"
 import frontPage from "./pages/Frontpage"
-import countryPage from "./pages/Countrypage"
+import countryPage from "./pages/countryPage"
 import countryTrash from "./pages/countryTrash"
 
 import './addedClasses.css';
