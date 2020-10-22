@@ -23,10 +23,7 @@ class frontPage extends React.Component{
         {/*map*/}
         <div className="row">
             <div className="col text-center">
-        <Map />
-                <div className="map">
-                  <h1> map </h1>
-                </div>
+                <Map />
             </div>
         </div>
         

@@ -19,8 +19,8 @@ class SearchableCountryTable extends React.Component {
             <div>
                 <SearchBar filterText={this.state.filterText} onFilterTextChange={this.handleFilterTextChange}
                     onInStockChange={this.handleInStockChange} />
-                <CountryTable filterText={this.state.filterText} countries={this.props.countries} />
                 <MapChart filterText={this.state.filterText} countries={this.props.countries} />
+                <CountryTable filterText={this.state.filterText} countries={this.props.countries} />
 
             </div>
         );
