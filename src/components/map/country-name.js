@@ -12,9 +12,9 @@ class CountryName extends React.Component {
     //Renders button with country name in it
     render() {
         return (
-            <div>
-                <button className="countrySearchName" onClick={this.handleClick}>{this.props.country.countryName}</button>
-            </div>
+                <a class="btn btn-outline-danger m-1" onClick={this.handleClick} role="button">
+                    {this.props.country.countryName}
+                </a>
             );
     }
 }

@@ -8,6 +8,8 @@ import {
     ZoomableGroup
 } from "react-simple-maps";
 
+import './map.css';
+
 //Map URL
 const geoUrl =
     "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
@@ -30,8 +32,12 @@ class MapChart extends React.Component {
         });
         return (
             //See react simple maps for documentation
-            <svg width="1100" height="700" viewbox="0 0 1200 675" transform="translate(0 -0)">
-                <ComposableMap width="400" height="670" className="worldMap">
+            //<svg width="500" height="700" viewbox="0 0 1200 675" transform="translate(0 -0)">
+            //width="1000" height="700" viewbox="0 0 0 0" transform="translate(0 -0)">
+                <ComposableMap 
+            projectionConfig={{ rotate: [-10, 0, 0], scale: 100}}
+            width="600" height="300" className="worldMap"
+            >
                     <Sphere stroke="#DDD" />
                     <Graticule stroke="#DDD" />
                     <Geographies geography={geoUrl} stroke="#FFF" strokeWidth={0.5}>
@@ -43,7 +49,7 @@ class MapChart extends React.Component {
                                     <Geography
                                         key={geo.rsmKey}
                                         geography={geo}
-                                        fill={isHighlighted ? "#F12" : "#F6F0E9"}
+                                        fill={isHighlighted ? "#eb3636" : "#adaaa6"}
                                         onClick={() => console.log(geo.properties.ISO_A3)}
                                     />
                                 );
@@ -51,7 +57,7 @@ class MapChart extends React.Component {
                         }
                         </Geographies>
                     </ComposableMap>
-                </svg>
+              
         );
     };
 }
