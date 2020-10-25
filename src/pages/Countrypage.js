@@ -1,4 +1,9 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+import NextFunction from "./NextFunction"
+import appClass from "../App"
+
 
 class countryPage extends React.Component{
   constructor(props){
@@ -148,9 +153,19 @@ class countryPage extends React.Component{
         
         {/*next button*/}
         <div class="col-6">
-            <div class="btn btn-outline-light">
-                <h3>Next</h3>
-            </div>
+        {/* <a class="btn btn-outline-light" href='/next' role="button">
+            <h3>Next</h3>
+         </a> */}
+         
+         {/* Calls the NextFunction after the user clicks "Next" button */}
+         <button onClick = {NextFunction} variant="outline-light">
+            <h3>Next</h3>
+         </button>{' '}
+{/* 
+          <button onClick={ () => appClass.nextFunction() } variant="outline-light">
+            <h3>Next</h3>
+          </button> */}
+
         </div>
     </div>
 

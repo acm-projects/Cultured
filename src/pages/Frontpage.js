@@ -1,4 +1,8 @@
 import React from 'react'
+import HeaderView from "../HistoryFunction"
+import { Button } from 'react-bootstrap';
+import appClass from '../App'
+import { useHistory } from 'react-router-dom';
 
 class frontPage extends React.Component{
   constructor(props){
@@ -79,18 +83,61 @@ class frontPage extends React.Component{
                 {/*Countries FIXME make this functional*/}
                 <div className="col-md p-2 m-2">
                     <h5>North America</h5>
-                    <div class="btn btn-outline-danger m-1">Country</div>
-                    <div class="btn btn-outline-danger m-1">Country</div>
-                    <div class="btn btn-outline-danger m-1">Country</div>
+
+                    {/* US */}
+                    <a class="btn btn-outline-danger m-1" href="/UnitedStates" role="button">
+                        <h5>United States</h5>
+                    </a>
+
+                    {/* <a class>
+                        <button onClick={ () => appClass.addItem("/UnitedStates") } variant="btn btn-outline-danger m-1">
+                            <h5>United States</h5>
+                        </button>
+                    </a> */}
+                    
+                    {/* function us() {
+                        
+                        <button onClick={ () => history.push("/UnitedStates") } variant="btn btn-outline-danger m-1">
+                            <h5>United States</h5>
+                        </button>
+                    } */}
+
+                    {/* Canada */}
+                    <a class="btn btn-outline-danger m-1" href="/Canada" role="button">
+                        <h5>Canada</h5>
+                    </a>
+
+                    {/* Tried to call the function in the App class but returns an empty arraylist */}
+                    {/* <a class>
+                        <button onClick={ () => appClass.addItem("/Canada") } variant="btn btn-outline-danger m-1">
+                            <h5>Canada</h5>
+                        </button>
+                    </a> */}
+
+                    {/* <a class>
+                        <button onClick={ () => HeaderView("/Canada") } variant="btn btn-outline-danger m-1">
+                            <h5>Canada</h5>
+                        </button>
+                    </a> */}
+
+
+                    <div class="btn btn-outline-danger m-1">Mexico</div>
                     <div class="btn btn-outline-danger m-1">Country</div>
                     <div class="btn btn-outline-danger m-1">Country</div>
                     <div class="btn btn-outline-danger m-1">Country</div>
                 </div>
+
+
                 <div className="col-md p-2 m-2">
                     <h5>Not North America</h5>
-                    <div class="btn btn-outline-danger m-1">Country</div>
-                    <div class="btn btn-outline-danger m-1">Country</div>
-                    <div class="btn btn-outline-danger m-1">Country</div>
+
+                    {/* Japan */}
+                    <a class="btn btn-outline-danger m-1" href="/Japan" role="button">
+                        <h5>Japan</h5>
+                    </a>
+
+                    <div class="btn btn-outline-danger m-1">South Korea</div>
+                    <div class="btn btn-outline-danger m-1">China</div>
                     <div class="btn btn-outline-danger m-1">Country</div>
                     <div class="btn btn-outline-danger m-1">Country</div>
                     <div class="btn btn-outline-danger m-1">Country</div>
