@@ -6,12 +6,7 @@ async function main(){
     try{
       await client.connect();  
       await listDatabases(client);
-      await createListing(client,
-        {
-            name: "Pakistan",
-            capital: "Islamabad"
-        });
-        
+      await findOneDocByName(client, "France");
     } catch (e){
         console.error(e);
     } finally {
@@ -27,7 +22,20 @@ async function listDatabases(client){
     databasesList.databases.forEach(db => console.log(` - ${db.name}`));
 }
 
-async function createListing(client, newListing){
-    const result = await client.db("Cultured").collection("Countries").insertOne(newListing);
+async function createDoc(client, newDoc){
+    const result = await client.db("Cultured").collection("Countries").insertOne(newDoc);
     console.log(`New listing created with the following id: ${result.insertedId}`);
+}
+
+async function findOneDocByName(client, docName){
+    const result = await client.db("Cultured").collection("Counties").findOne({ name: docName });
+    if (result) 
+    {
+        console.log(`Found a match in the collection with the name '${docName}':`);
+        console.log(result);
+    } 
+    else 
+    {
+        console.log(`No match found with the name '${docName}'`);
+    }
 }
