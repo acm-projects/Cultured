@@ -22,22 +22,21 @@ class App extends React.Component {
         this.state = { apiResponse: "" };
     }
     callAPI = async () => {
-        const response = await fetch('http://localhost:5000/newsAPI');
-        const body = await response.json();
-        if (response.status !== 200) throw Error(body.message);
-        return body;
+        let response = await fetch('http://localhost:5000/newsAPI')
+            .then(body => body.text())
+            .then(body => this.setState({ apiResponse: body }))
+       // if (response.status !== 200) throw Error(body.message);
 };
     componentDidMount() {
         this.callAPI()
-        .then(res => this.setState({ apiResponse: res }))
-        .catch(err => console.log(err));
+            .catch(err => console.log(err));
     }
 render(){
   return (
       <div className="App">
       
       
-          <h1>Country Page</h1>
+          <h1>{this.state.apiResponse}</h1>
           <p>{this.state.apiResponse}</p>
       
             
