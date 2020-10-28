@@ -19,25 +19,32 @@ import './addedClasses.css';
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { apiResponse: "" };
+        this.state = {
+            newsData: {title: null, url: null} };
     }
     callAPI = async () => {
         let response = await fetch('http://localhost:5000/newsAPI')
-            .then(body => body.text())
-            .then(body => this.setState({ apiResponse: body }))
+            .then(body => body.json())
+            .then(body => {
+                console.log(body.data.value[0].title)
+                console.log(body.data.value[0].url)
+                this.setState({ newsData: { title: body.data.value[0].title, url: body.data.value[0].url} })
+            })
        // if (response.status !== 200) throw Error(body.message);
+ 
 };
     componentDidMount() {
         this.callAPI()
             .catch(err => console.log(err));
     }
-render(){
+    render() {
+
   return (
       <div className="App">
       
       
-          <h1>{this.state.apiResponse}</h1>
-          <p>{this.state.apiResponse}</p>
+          <h1>{this.state.newsData.title}</h1>
+          <p>{this.state.newsData.url}</p>
       
             
     <div className="bg-color align-center full-height">
