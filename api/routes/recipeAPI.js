@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 		"apiKey": "7662bab9f8254d1ea497a542d7c8e4e5",
 		"limitLicense": "true",
 		"tags": "chinese",
-		"number": "2"
+		"number": "1"
 	});
 
 	recReq.headers({
