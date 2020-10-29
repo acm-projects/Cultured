@@ -6,7 +6,9 @@ class countryPage extends React.Component{
         this.state = {
             newsData: { title: null, url: null },
             recipeData: { image: null, sourceurl: null },
-            imgData: {image1: null}
+            imgData: { flag: null },
+            geoData: {lat: null, lon: null},
+            placeData: {name: null}
         };
     }
       callNewsAPI = async () => {
@@ -36,6 +38,24 @@ class countryPage extends React.Component{
         // if (response.status !== 200) throw Error(body.message);
 
     };
+    callGeoAPI = async () => {
+        let response = await fetch('http://localhost:5000/geoAPI')
+            .then(body => body.json())
+            .then(body => {
+                this.setState({ geoData: { lat: body.data.lat, lon: body.data.lon} })
+            })
+        // if (response.status !== 200) throw Error(body.message);
+
+    };
+    callPlaceAPI = async () => {
+        let response = await fetch('http://localhost:5000/placeAPI')
+            .then(body => body.json())
+            .then(body => {
+                this.setState({ placeData: { name: body.data[0].name } })
+            })
+        // if (response.status !== 200) throw Error(body.message);
+
+    };
       componentDidMount() {
           this.callNewsAPI()
               .catch(err => console.log(err));
@@ -44,6 +64,12 @@ class countryPage extends React.Component{
               .catch(err => console.log(err));
 
           this.callImgAPI()
+              .catch(err => console.log(err));
+
+          this.callGeoAPI()
+              .catch(err => console.log(err));
+
+          this.callPlaceAPI()
               .catch(err => console.log(err));
       }
   
@@ -172,7 +198,7 @@ class countryPage extends React.Component{
         <div class=" card m-2">
           <div class="card-body">
             <h5 class="card-title">History</h5>
-            <p class="card-text">[text]</p>
+            <p class="card-text">{this.state.placeData.name}</p>
           </div>
         </div> 
         
