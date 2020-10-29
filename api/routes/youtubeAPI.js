@@ -15,10 +15,10 @@ router.get('/', (req, res) => {
 	recReq.headers({
 		"Content-Type": "application/json"
 	});
-	recReq.end(function (res) {
-		if (res.error) throw new Error(res.error);
-		console.log(res.body);
-		return res.body;
+	recReq.end(function (response) {
+		if (response.error) throw new Error(response.error);
+		console.log(response.body);
+		res.json({ data: response.body });
 	});
 
 });

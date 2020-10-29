@@ -17,10 +17,10 @@ router.get('/', (req, res) => {
 		"useQueryString": true
 	});
 
-	imgReq.end(function (res) {
-		if (res.error) throw new Error(res.error);
-		console.log(res.body);
-		return res.body;
+	imgReq.end(function (response) {
+		if (response.error) throw new Error(response.error);
+		console.log(response.body);
+		res.json({ data: response.body });
 	});
 
 });
