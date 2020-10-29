@@ -12,7 +12,7 @@ class frontPage extends React.Component{
       <div >
         
         {/*Header*/}
-        <div className="row pt-5 pt-3">
+        <div className="pt-5 pt-3">
             <div className="col text-light text-center">
                 <h1>Welcome to Cultured! </h1>
             </div>

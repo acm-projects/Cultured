@@ -36,14 +36,10 @@ render(){
   return (
       <div className="App">
       
-      
-          <h1>Country Page</h1>
-          <p>{this.state.apiResponse}</p>
-      
             
     <div className="bg-color align-center full-height">
       {/*renders navbar*/}
-
+      ReactDOM.render(<Navbar/>, document.getElementById('root'));
     
     <div className="">
       
