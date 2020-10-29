@@ -1,9 +1,51 @@
 import React from 'react'
 
 class countryPage extends React.Component{
-  constructor(props){
-    super(props);
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            newsData: { title: null, url: null },
+            recipeData: { image: null, sourceurl: null },
+            imgData: {image1: null}
+        };
+    }
+      callNewsAPI = async () => {
+          let response = await fetch('http://localhost:5000/newsAPI')
+              .then(body => body.json())
+              .then(body => {
+                  this.setState({ newsData: { title: body.data.value[0].title, url: body.data.value[0].url } })
+              })
+          // if (response.status !== 200) throw Error(body.message);
+
+    };
+    callRecipeAPI = async () => {
+        let response = await fetch('http://localhost:5000/recipeAPI')
+            .then(body => body.json())
+            .then(body => {
+                this.setState({ recipeData: { image: body.data.recipes[0].image, sourceurl: body.data.recipes[0].sourceUrl } })
+            })
+        // if (response.status !== 200) throw Error(body.message);
+
+    };
+    callImgAPI = async () => {
+        let response = await fetch('http://localhost:5000/imgAPI')
+            .then(body => body.json())
+            .then(body => {
+                this.setState({ imgData: { flag:  body.data.value[0].url} })
+            })
+        // if (response.status !== 200) throw Error(body.message);
+
+    };
+      componentDidMount() {
+          this.callNewsAPI()
+              .catch(err => console.log(err));
+
+          this.callRecipeAPI()
+              .catch(err => console.log(err));
+
+          this.callImgAPI()
+              .catch(err => console.log(err));
+      }
   
   render() {
     return (
@@ -30,7 +72,7 @@ class countryPage extends React.Component{
         <div class="col-6 col-2-md">
             <div class=" card m-2">
               <div class="card-body">
-                <img class="card-img-top" src="..." alt="Card image cap"/>
+                 <img class="card-img-top" src={this.state.imgData.flag} alt="Card image cap"/>
               </div>
             </div>
         </div>
@@ -74,7 +116,7 @@ class countryPage extends React.Component{
         <div class=" card m-2">
           <div class="card-body">
             <h5 class="card-title">Food</h5>
-            <p class="card-text">Food</p>
+               <p class="card-text">{this.state.recipeData.sourceurl}</p>
           </div>
         </div> 
         
@@ -106,7 +148,7 @@ class countryPage extends React.Component{
         <div class=" card m-2">
           <div class="card-body">
             <h5 class="card-title">News</h5>
-            <p class="card-text">news</p>
+            <p class="card-text">{this.state.newsData.title}</p>
           </div>
         </div> 
         
