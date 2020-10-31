@@ -2,22 +2,25 @@ var unirest = require("unirest");
 var express = require('express');
 var router = express.Router();
 
-router.get('/', (req, res) => {
-	var recReq = unirest("GET", "https://developers.google.com/apis-explorer/#p/youtube/v3/youtube.search.list");
+router.get('/:lat/:lon', (req, res) => {
+	var lat = req.params.lat, lon = req.params.lon;
+	var url = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&location=" + lat + "%2C" + lon + "&locationRadius=50mi&type=video&key=AIzaSyAjJalQuUjPr8hxyFLk3uCxuPNt4HOia6A"
+	var recReq = unirest("GET", url);
+	
 	recReq.query({
-		"key": "AIzaSyAjJalQuUjPr8hxyFLk3uCxuPNt4HOia6A",
-		"part": "snippet",
-		"regionCode": "es",
-		"type": "video:",
-		"chart": "mostPopular"
+		//"part": "snippet",
+		//"location": "21.5922529,-158.1147114",
+		//"locationRadius": "50mi",
+		//"type": "video:",
+		//"key": "AIzaSyAjJalQuUjPr8hxyFLk3uCxuPNt4HOia6A"
 	});
-
+	
 	recReq.headers({
-		"Content-Type": "application/json"
+		"Accept": "application/json"
 	});
 	recReq.end(function (response) {
 		if (response.error) throw new Error(response.error);
-		console.log(response.body);
+		console.log(response.body.items[0].snippet.title);
 		res.json({ data: response.body });
 	});
 
