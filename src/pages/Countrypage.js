@@ -6,11 +6,11 @@ class countryPage extends React.Component{
         this.state = {
             newsData: { title: null, url: null },
             recipeData: { image: null, sourceurl: null },
-            imgData: { flag: null },
+            imgData: { news: null },
             geoData: {lat: null, lon: null},
             placeData: { name: null },
-            youtubeData: {title: null, url: null}
-
+            youtubeData: {title: null, id: null},
+            generalImgData: {flag: null, location: null}
         };
     }
     callNewsAPI = async (country) => {
@@ -37,7 +37,7 @@ class countryPage extends React.Component{
         let response = await fetch('http://localhost:5000/imgAPI/' + search)
             .then(body => body.json())
             .then(body => {
-                this.setState({ imgData: { flag:  body.data.value[0].url} })
+                this.setState({ imgData: { news:  body.data.value[0].url} })
             })
         // if (response.status !== 200) throw Error(body.message);
 
@@ -49,7 +49,7 @@ class countryPage extends React.Component{
             .then(body => {
                 this.setState({ geoData: { lat: body.data.lat, lon: body.data.lon } })
                 this.callPlaceAPI()
-                this.callYoutubeAPI()
+                //this.callYoutubeAPI()
             })
         // if (response.status !== 200) throw Error(body.message);
 
@@ -60,6 +60,7 @@ class countryPage extends React.Component{
             .then(body => body.json())
             .then(body => {
                 this.setState({ placeData: { name: body.data[0].name } })
+                this.callGeneralImgAPILocation()
             })
         // if (response.status !== 200) throw Error(body.message);
 
@@ -70,7 +71,30 @@ class countryPage extends React.Component{
             .then(body => body.json())
             .then(body => {
                 console.log(body);
-                this.setState({ youtubeData: { title: body.data.items[0].snippet.title } })
+                this.setState({ youtubeData: { title: body.data.items[0].snippet.title, id: body.data.items[0].id.videoId } })
+            })
+        // if (response.status !== 200) throw Error(body.message);
+
+    };
+    callGeneralImgAPIFlag = async (search) => {
+        let response = await fetch('http://localhost:5000/generalImgAPI/' + search)
+            .then(body => body.json())
+            .then(body => {
+                console.log(body);
+                var data = body.data.value[0].thumbnailUrl;
+                this.setState({ generalImgData: { flag: data } })
+            })
+        // if (response.status !== 200) throw Error(body.message);
+
+    };
+    callGeneralImgAPILocation = async () => {
+        var search = this.state.placeData.name;
+        let response = await fetch('http://localhost:5000/generalImgAPI/' + search)
+            .then(body => body.json())
+            .then(body => {
+                console.log(body);
+                var data = body.data.value[0].thumbnailUrl;
+                this.setState({ generalImgData: { flag: this.state.generalImgData.flag, location: data } })
             })
         // if (response.status !== 200) throw Error(body.message);
 
@@ -84,6 +108,9 @@ class countryPage extends React.Component{
             .catch(err => console.log(err));
 
          this.callGeoAPI("seatle")
+            .catch(err => console.log(err))
+
+        this.callGeneralImgAPIFlag("canadian flag")
             .catch(err => console.log(err))
 
       }
@@ -113,7 +140,7 @@ class countryPage extends React.Component{
         <div class="col-6 col-2-md">
             <div class=" card m-2">
               <div class="card-body">
-                 <img class="card-img-top" src={this.state.imgData.flag} alt="Card image cap"/>
+                    <img class="card-img-top" src={this.state.generalImgData.flag} alt="Card image cap" />
               </div>
             </div>
         </div>
@@ -149,7 +176,7 @@ class countryPage extends React.Component{
         <div class=" card m-2">
           <div class="card-body">
             <h5 class="card-title">Fast Facts</h5>
-                        <p class="card-text">{this.state.youtubeData.title}</p>
+                        <p class="card-text">text</p>
           </div>
         </div> 
         
@@ -189,7 +216,9 @@ class countryPage extends React.Component{
         <div class=" card m-2">
           <div class="card-body">
             <h5 class="card-title">News</h5>
-            <p class="card-text">{this.state.newsData.title}</p>
+                        <p class="card-text">{this.state.newsData.title}</p>
+                        <p class="card-text">{this.state.newsData.url}</p>
+                        <img class="card-img-top" src={this.state.imgData.news} alt="Card image cap" />
           </div>
         </div> 
         
@@ -213,7 +242,8 @@ class countryPage extends React.Component{
         <div class=" card m-2">
           <div class="card-body">
             <h5 class="card-title">History</h5>
-            <p class="card-text">{this.state.placeData.name}</p>
+                        <p class="card-text">{this.state.placeData.name}</p>
+                        <img class="card-img-top" src={this.state.generalImgData.location} alt="Card image cap" />
           </div>
         </div> 
         
