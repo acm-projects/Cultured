@@ -8,7 +8,9 @@ class countryPage extends React.Component{
             recipeData: { image: null, sourceurl: null },
             imgData: { flag: null },
             geoData: {lat: null, lon: null},
-            placeData: {name: null}
+            placeData: { name: null },
+            youtubeData: {title: null, url: null}
+
         };
     }
     callNewsAPI = async (country) => {
@@ -47,6 +49,7 @@ class countryPage extends React.Component{
             .then(body => {
                 this.setState({ geoData: { lat: body.data.lat, lon: body.data.lon } })
                 this.callPlaceAPI()
+                this.callYoutubeAPI()
             })
         // if (response.status !== 200) throw Error(body.message);
 
@@ -61,6 +64,17 @@ class countryPage extends React.Component{
         // if (response.status !== 200) throw Error(body.message);
 
     };
+    callYoutubeAPI = async () => {
+        var lat = this.state.geoData.lat, lon = this.state.geoData.lon;
+        let response = await fetch('http://localhost:5000/youtubeAPI/' + lat + '/' + lon)
+            .then(body => body.json())
+            .then(body => {
+                console.log(body);
+                this.setState({ youtubeData: { title: body.data.items[0].snippet.title } })
+            })
+        // if (response.status !== 200) throw Error(body.message);
+
+    };
     componentDidMount() {
 
         this.callNewsAPI("japan")
@@ -69,8 +83,9 @@ class countryPage extends React.Component{
          this.callRecipeAPI("chinese")
             .catch(err => console.log(err));
 
-         this.callGeoAPI("paris")
-              .catch(err => console.log(err))
+         this.callGeoAPI("seatle")
+            .catch(err => console.log(err))
+
       }
   
   render() {
@@ -134,7 +149,7 @@ class countryPage extends React.Component{
         <div class=" card m-2">
           <div class="card-body">
             <h5 class="card-title">Fast Facts</h5>
-            <p class="card-text">[facts]</p>
+                        <p class="card-text">{this.state.youtubeData.title}</p>
           </div>
         </div> 
         
