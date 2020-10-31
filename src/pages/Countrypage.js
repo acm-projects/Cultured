@@ -11,17 +11,18 @@ class countryPage extends React.Component{
             placeData: {name: null}
         };
     }
-      callNewsAPI = async () => {
-          let response = await fetch('http://localhost:5000/newsAPI')
+    callNewsAPI = async (country) => {
+        let response = await fetch("http://localhost:5000/newsAPI/" + country)
               .then(body => body.json())
               .then(body => {
                   this.setState({ newsData: { title: body.data.value[0].title, url: body.data.value[0].url } })
+                  this.callImgAPI();
               })
           // if (response.status !== 200) throw Error(body.message);
 
     };
-    callRecipeAPI = async () => {
-        let response = await fetch('http://localhost:5000/recipeAPI')
+    callRecipeAPI = async (cuisine) => {
+        let response = await fetch('http://localhost:5000/recipeAPI/' + cuisine)
             .then(body => body.json())
             .then(body => {
                 this.setState({ recipeData: { image: body.data.recipes[0].image, sourceurl: body.data.recipes[0].sourceUrl } })
@@ -30,7 +31,8 @@ class countryPage extends React.Component{
 
     };
     callImgAPI = async () => {
-        let response = await fetch('http://localhost:5000/imgAPI')
+        var search = this.state.newsData.title;
+        let response = await fetch('http://localhost:5000/imgAPI/' + search)
             .then(body => body.json())
             .then(body => {
                 this.setState({ imgData: { flag:  body.data.value[0].url} })
@@ -38,17 +40,20 @@ class countryPage extends React.Component{
         // if (response.status !== 200) throw Error(body.message);
 
     };
-    callGeoAPI = async () => {
-        let response = await fetch('http://localhost:5000/geoAPI')
+    callGeoAPI = async (capitol) => {
+
+        let response = await fetch('http://localhost:5000/geoAPI/' + capitol)
             .then(body => body.json())
             .then(body => {
-                this.setState({ geoData: { lat: body.data.lat, lon: body.data.lon} })
+                this.setState({ geoData: { lat: body.data.lat, lon: body.data.lon } })
+                this.callPlaceAPI()
             })
         // if (response.status !== 200) throw Error(body.message);
 
     };
     callPlaceAPI = async () => {
-        let response = await fetch('http://localhost:5000/placeAPI')
+        var lat = this.state.geoData.lat, lon = this.state.geoData.lon;
+        let response = await fetch('http://localhost:5000/placeAPI/' + lat + "/" + lon)
             .then(body => body.json())
             .then(body => {
                 this.setState({ placeData: { name: body.data[0].name } })
@@ -56,21 +61,16 @@ class countryPage extends React.Component{
         // if (response.status !== 200) throw Error(body.message);
 
     };
-      componentDidMount() {
-          this.callNewsAPI()
+    componentDidMount() {
+
+        this.callNewsAPI("japan")
               .catch(err => console.log(err));
 
-          this.callRecipeAPI()
-              .catch(err => console.log(err));
+         this.callRecipeAPI("chinese")
+            .catch(err => console.log(err));
 
-          this.callImgAPI()
-              .catch(err => console.log(err));
-
-          this.callGeoAPI()
-              .catch(err => console.log(err));
-
-          this.callPlaceAPI()
-              .catch(err => console.log(err));
+         this.callGeoAPI("paris")
+              .catch(err => console.log(err))
       }
   
   render() {

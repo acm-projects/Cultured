@@ -2,11 +2,12 @@ var unirest = require("unirest");
 var express = require('express');
 var router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/:data', (req, res) => {
 	var imgReq = unirest("GET", "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI");
+	var data = req.params.data;
 	imgReq.query({
 		"pageSize": "3",
-		"q": "Statue of Liberty",
+		"q": data,
 		"autoCorrect": "false",
 		"pageNumber": "1"
 	});
