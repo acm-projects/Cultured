@@ -3,14 +3,15 @@ var express = require('express');
 var router = express.Router();
 
 
-router.get('/', (req, res) => {
+router.get('/:country', (req, res) => {
 	var newsReq = unirest("GET", "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI")
+	var data = req.params.country;
 	newsReq.query({
 		"toPublishedDate": "null",
 		"fromPublishedDate": "null",
 		"pageSize": "1",
-		"q": "canada",
 		"autoCorrect": "false",
+		"q": data,
 		"pageNumber": "1"
 	});
 
