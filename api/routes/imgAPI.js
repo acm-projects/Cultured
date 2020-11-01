@@ -19,8 +19,6 @@ router.get('/:data', (req, res) => {
 	});
 
 	imgReq.end(function (response) {
-		if (response.error) throw new Error(response.error);
-		console.log(response.body);
 		res.json({ data: response.body });
 	});
 

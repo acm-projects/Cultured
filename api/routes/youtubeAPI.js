@@ -19,8 +19,6 @@ router.get('/:lat/:lon', (req, res) => {
 		"Accept": "application/json"
 	});
 	recReq.end(function (response) {
-		if (response.error) throw new Error(response.error);
-		console.log(response.body.items[0].snippet.title);
 		res.json({ data: response.body });
 	});
 
