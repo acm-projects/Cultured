@@ -17,8 +17,6 @@ router.get('/:cuisine', (req, res) => {
 
 	});
 	recReq.end(function (response) {
-		if (response.error) throw new Error(response.error);
-		console.log(response.body);
 		res.json({ data: response.body });
 	});
 

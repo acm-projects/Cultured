@@ -60,7 +60,7 @@ class countryPage extends React.Component{
             .then(body => body.json())
             .then(body => {
                 this.setState({ placeData: { name: body.data[0].name } })
-                this.callGeneralImgAPILocation()
+                //this.callGeneralImgAPILocation()
             })
         // if (response.status !== 200) throw Error(body.message);
 
@@ -110,8 +110,8 @@ class countryPage extends React.Component{
          this.callGeoAPI("seatle")
             .catch(err => console.log(err))
 
-        this.callGeneralImgAPIFlag("canadian flag")
-            .catch(err => console.log(err))
+        //this.callGeneralImgAPIFlag("canadian flag")
+            //.catch(err => console.log(err))
 
       }
   
