@@ -7,11 +7,12 @@ var cors = require("cors");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var newsRouter = require('./routes/newsAPI');
-var recRouter = require('./routes/recipieAPI');
+var recRouter = require('./routes/recipeAPI');
 var youRouter = require('./routes/youtubeAPI');
 var imgRouter = require('./routes/imgAPI');
 var geoRouter = require('./routes/geoApi');
 var placeRouter = require('./routes/placeAPI');
+var generalImgRouter = require('./routes/generalImgAPI');
 var unirest = require("unirest");
 var app = express();
 
@@ -33,11 +34,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/newsAPI', newsRouter); //Use newsRouter for newsAPI
-app.use('/recipieAPI', recRouter); //Use recRouter for recipieAPI
+app.use('/recipeAPI', recRouter); //Use recRouter for recipieAPI
 app.use('/youtubeAPI', youRouter); //Use youRouter for youtubeAPI
 app.use('/imgAPI', imgRouter);
 app.use('/geoAPI', geoRouter);
 app.use('/placeAPI', placeRouter);
+app.use('/generalImgAPI', generalImgRouter);
 
 app.listen(port, () => console.log('Listening on port ' + port));
 

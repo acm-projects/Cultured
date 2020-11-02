@@ -2,20 +2,23 @@ var unirest = require("unirest");
 var express = require('express');
 var router = express.Router();
 
-router.get('/:lat/:lon', (req, res) => {
-	var lat = req.params.lat, lon = req.params.lon;
-	var url = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&location=" + lat + "%2C" + lon + "&locationRadius=50mi&type=video&key=AIzaSyAjJalQuUjPr8hxyFLk3uCxuPNt4HOia6A&maxResults=1"
+router.get('/:search', (req, res) => {
+	var search = req.params.search;
+	var url = "https://bing-image-search1.p.rapidapi.com/images/search";
 	var recReq = unirest("GET", url);
-	/*
+
 	recReq.query({
-		//"part": "snippet",
-		//"location": "21.5922529,-158.1147114",
+		"q": search,
+		"count": "1"
 		//"locationRadius": "50mi",
 		//"type": "video:",
 		//"key": "AIzaSyAjJalQuUjPr8hxyFLk3uCxuPNt4HOia6A"
 	});
-	*/
+
 	recReq.headers({
+		"x-rapidapi-host": "bing-image-search1.p.rapidapi.com",
+		"x-rapidapi-key": "7efa98af87msh2b012faa31a1d15p1747fbjsn0dbadc96a0a2",
+		"useQueryString": true,
 		"Accept": "application/json"
 	});
 	recReq.end(function (response) {

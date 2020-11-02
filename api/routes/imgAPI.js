@@ -2,11 +2,12 @@ var unirest = require("unirest");
 var express = require('express');
 var router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/:data', (req, res) => {
 	var imgReq = unirest("GET", "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI");
+	var data = req.params.data;
 	imgReq.query({
-		"pageSize": "10",
-		"q": "canada",
+		"pageSize": "3",
+		"q": data,
 		"autoCorrect": "false",
 		"pageNumber": "1"
 	});
@@ -17,10 +18,8 @@ router.get('/', (req, res) => {
 		"useQueryString": true
 	});
 
-	imgReq.end(function (res) {
-		if (res.error) throw new Error(res.error);
-		console.log(res.body);
-		return res.body;
+	imgReq.end(function (response) {
+		res.json({ data: response.body });
 	});
 
 });

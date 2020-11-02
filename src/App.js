@@ -19,20 +19,17 @@ import './addedClasses.css';
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { apiResponse: "" };
+        this.state = {
+
+        };
     }
-    callAPI = async () => {
-        const response = await fetch('http://localhost:5000/newsAPI');
-        const body = await response.json();
-        if (response.status !== 200) throw Error(body.message);
-        return body;
-};
+
     componentDidMount() {
-        this.callAPI()
-        .then(res => this.setState({ apiResponse: res }))
-        .catch(err => console.log(err));
+
     }
-render(){
+
+    render() {
+
   return (
       <div className="App">
       

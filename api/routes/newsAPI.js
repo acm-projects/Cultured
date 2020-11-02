@@ -2,14 +2,16 @@ var unirest = require("unirest");
 var express = require('express');
 var router = express.Router();
 
-router.get('/', (req, res) => {
-	var newsReq = unirest("GET", "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI");
+
+router.get('/:country', (req, res) => {
+	var newsReq = unirest("GET", "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI")
+	var data = req.params.country;
 	newsReq.query({
 		"toPublishedDate": "null",
 		"fromPublishedDate": "null",
-		"pageSize": "10",
-		"q": "canada",
+		"pageSize": "1",
 		"autoCorrect": "false",
+		"q": data,
 		"pageNumber": "1"
 	});
 
@@ -17,16 +19,16 @@ router.get('/', (req, res) => {
 		"x-rapidapi-host": "contextualwebsearch-websearch-v1.p.rapidapi.com",
 		"x-rapidapi-key": "7efa98af87msh2b012faa31a1d15p1747fbjsn0dbadc96a0a2",
 		"useQueryString": true,
-        "Access-Control-Allow-Origin": http://localhost:3000/,
+		"Content-Type": "application/json"
 	});
 
-	newsReq.end(function (res) {
-		if (res.error) throw new Error(res.error);
-		console.log(res.body);
-		return resolve(res.body);
-	});
-
+	
+	 newsReq.end(function (response) {
+		 res.json({ data: response.body });
+	 });
+	 
 });
+
 
 
 module.exports = router;
