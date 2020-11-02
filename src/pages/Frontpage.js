@@ -33,8 +33,9 @@ class frontPage extends React.Component{
         </div>
         
 
-        
+        <div class="container-xl">
         <Map />
+        </div>
         
         <div className="container-md  align-center text-center">        
 
@@ -43,7 +44,7 @@ class frontPage extends React.Component{
 
         
         {/*description*/}
-        <div className="container pl-5 pr-5 pt-3 pb-3 bg-white">
+        <div className="container pl-5 pr-5 pt-3 pb-3 bg-white rounded">
             <p>Cultured is a virtual experience that immerses you in the culture of countries around the world...</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce luctus bibendum ligula quis faucibus. Aliquam erat volutpat. Pellentesque ut condimentum ipsum. Donec nibh ante, bibendum eu consequat laoreet, fringilla ut justo. Aliquam tempus nisi eu dolor tincidunt pretium. Fusce a dolor vel lacus pharetra euismod vitae a nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur eget quam et velit finibus dignissim vitae eu magna. Nulla sem purus, consectetur ac libero non, egestas posuere augue. Cras sit amet metus non elit auctor malesuada. Morbi id dui viverra, interdum ante laoreet, lacinia metus.</p>
         </div>

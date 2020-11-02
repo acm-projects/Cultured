@@ -41,7 +41,7 @@ class CountryTable extends React.Component {
             
     <div>
                                     
-        <div className="container bg-light">                         
+        <div className="container bg-light rounded">                         
             <div className="row">
               {rows}
             </div>
