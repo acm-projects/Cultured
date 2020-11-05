@@ -1,70 +1,70 @@
-# Cultured
+# Getting Started with Create React App
 
-### Overview
-Introducing Cultured, a website where you choose a country, and you are immersed in music/news/entertainment from that country
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Minimum Viable Product
-> - Randomizer to randomly “visit” a country
-> - Provides fast facts about culture of a country
-> - Trending articles from that country’s leading newspapers are translated and available to read
-> - The site plays a radio station from that country in the background as you browse
-> - Suggests YouTubers/TV Shows/Movies from that country to watch
-> - Suggests recipes to cook that country’s most popular dishes
-> - Shows top tourist points for the country
+## Available Scripts
 
-### Stretch Goals
-> - Quiz to match a country to your personality
-> - Choose two countries and get a side-by-side comparison of culture
-> - Allow users to create an account and keep track of countries they have virtually “visited” 
-> 	- Would require user authentication and building out a user profile page
-> 	- Have a passport with stamps that can be shared on social media
+In the project directory, you can run:
 
-## Technologies
+### `npm start`
 
-### Framework
-- React
-	- [React.js](https://reactjs.org/) (Frontend)
-	- [NodeJS](https://nodejs.org/en/) (Backend)
-- GitHub Pages
-	- Deploy the web pages
-### Database
-- [MongoDB](https://www.mongodb.com/)
-- [DynamoDB](https://aws.amazon.com/dynamodb/)
-- [Firebase](https://firebase.google.com/pricing/?authuser=0)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### APIs
-- [YouTube API](https://developers.google.com/youtube/v3)
-	- Can query by location - we can use it to find popular YouTube videos posted from a certain country
-- [Contextual Web Search API](https://contextualwebsearch.com/)
-	- Pricing: Limited free version available
-	- Use for pulling news articles from the given country
-- [Cloud Translation API](https://cloud.google.com/translate/docs)
-	- Use to translate articles into English
-- [Spoontacular API](https://spoonacular.com/food-api)
-	- Pricing: 150 calls/day for free
-	- Allows you to get recipes with different keywords
-- [Shoutcast Radio API](https://directory.shoutcast.com/Developer)
-	- Pricing: Freemium plan - does require credit card
-	- Allows you to access radio stations from around the world
-- [Sygic Travel API](https://travel.sygic.com/en/b2b)
-	- 1000 calls/month for free (may need to make multiple accounts if this becomes an issue)
-	- Returns tourist attractions for a location
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-### Data Sources
-- [CIA World Factbook Data](https://old.datahub.io/dataset/cia-world-factbook)
-- [Countries Database](https://www.back4app.com/database/back4app/list-of-all-continents-countries-cities)
-	- Name, language spoken, country code, phone code, flag emoji, country capital, and the currencies for all countries
-	- Download data for free
+### `npm test`
 
-### Competition >:|
-- [Commisceo Global](https://www.commisceo-global.com/resources/country-guides)
-	- Provides good info about culture for 80+ countries
-	- Pretty boring UI, not very interactive
-- [Culture Trip](https://theculturetrip.com/our-app/)
-	- Mobile app, not a web app
-	- Aimed more at planning trips than education
-- [Hofstede Insights](https://play.google.com/store/apps/details?id=com.hofstedeinsights.culturefactor&hl=en)
-	- Mobile app that compares culture of two countries
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-You can do this! :D
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
