@@ -5,6 +5,6 @@ export const COUNTRIES = [{ location: "North America", countryName: "USA", count
             , { location: "Africa", countryName: "Uganda", countryCode: "UGA", countryPage: "https://en.wikipedia.org/wiki/Uganda" }
             , { location: "South America", countryName: "Brazil", countryCode: "BRA", countryPage: "https://en.wikipedia.org/wiki/Brazil" }
             , { location: "Europe", countryName: "Romania", countryCode: "ROU", countryPage: "https://en.wikipedia.org/wiki/Romania"}
-            , {location: "Asia", countryName: "Japan", countryCode: "JPN", countryPage: "https://en.wikipedia.org/wiki/Japan"}];
+            , {location: "Asia", countryName: "Japan", countryCode: "JPN", countryPage: "http://localhost:3000/Country"}];
 
 export default COUNTRIES;

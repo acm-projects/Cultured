@@ -12,6 +12,7 @@ router.get('/:country', (req, res) => {
 		"pageSize": "1",
 		"autoCorrect": "false",
 		"q": data,
+                "limit": "4",
 		"pageNumber": "1"
 	});
 
