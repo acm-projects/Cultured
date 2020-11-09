@@ -4,3 +4,7 @@
     height: 15vw;
     object-fit: cover;
 }
+
+.blue-bg {
+    background: #364a69;
+}
