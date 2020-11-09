@@ -2,7 +2,9 @@ import React from 'react'
 import ReactPlayer from "react-player"
 import ".\\b.css"
 
-class countryPage extends React.Component{
+class CountryPage extends React.Component{
+    
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -31,7 +33,11 @@ class countryPage extends React.Component{
         let response = await fetch('http://localhost:5000/recipeAPI/' + cuisine)
             .then(body => body.json())
             .then(body => {
-                this.setState({ recipeData: { image: body.data.recipes[0].image, sourceurl: body.data.recipes[0].sourceUrl, summary: body.data.recipes[0].summary, title:body.data.recipes[0].title, prepTime: body.data.recipes[0].readyInMinutes, servings: body.data.recipes[0].servings } })
+                this.setState({ recipeData: { image: body.data.recipes[0].image, sourceurl: body.data.recipes[0].sourceUrl, summary: body.data.recipes[0].summary, title:body.data.recipes[0].title, prepTime: body.data.recipes[0].readyInMinutes, servings: body.data.recipes[0].servings,
+                                            
+                image1: body.data.recipes[1].image, sourceurl1: body.data.recipes[1].sourceUrl, summary1: body.data.recipes[1].summary, title1:body.data.recipes[1].title, prepTime1: body.data.recipes[1].readyInMinutes, servings1: body.data.recipes[1].servings,
+
+                image2: body.data.recipes[2].image, sourceurl2: body.data.recipes[2].sourceUrl, summary2: body.data.recipes[2].summary, title2:body.data.recipes[2].title, prepTime2: body.data.recipes[2].readyInMinutes, servings2: body.data.recipes[2].servings} })
             })
         // if (response.status !== 200) throw Error(body.message);
 
@@ -108,13 +114,13 @@ class countryPage extends React.Component{
     };
     componentDidMount() {
 
-        this.callNewsAPI("japan")
+        this.callNewsAPI(this.props.title)
               .catch(err => console.log(err));
 
-         this.callRecipeAPI("chinese")
+         this.callRecipeAPI(this.props.foodTag)
             .catch(err => console.log(err));
 
-         this.callGeoAPI("seatle")
+         this.callGeoAPI(this.props.capital)
             .catch(err => console.log(err))
 
         //this.callGeneralImgAPIFlag("canadian flag")
@@ -124,6 +130,8 @@ class countryPage extends React.Component{
   
 //this.props.countries
   render() {
+      
+      
     return (
       <div>
     <div class="container-fluid  mt-4 ">
@@ -136,7 +144,7 @@ class countryPage extends React.Component{
           <div class="col-xl-6">
             <div class="card m-2">
               <div class="card-body">
-                <h1 class="card-title">Country Title</h1>
+                <h1 class="card-title">{this.props.title}</h1>
               </div>
             </div>
           </div>
@@ -153,9 +161,8 @@ class countryPage extends React.Component{
         {/*flag*/}
         <div class="col-6 col-2-md d-flex align-items-stretch">
             <div class=" card m-2">
-              <div class="card-body">
-                    <img class="card-img-top" src={this.state.generalImgData.flag} alt="Card image cap" />
-        <img class="card-img-top" src={"        https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/255px-Flag_of_Australia_%28converted%29.svg.png"} alt="Card image cap" />
+              <div class="card-body ">
+                    <img class="card-img-top border border-dark" src={this.props.flagUrl} alt="Card image cap" />
               </div>
             </div>
         </div>
@@ -177,75 +184,46 @@ class countryPage extends React.Component{
             <h5 class="card-header">Fast Facts</h5>
           <div class="card-body">
             <div class="row">
-                    <h5 class="card-text text-left pr-2 pl-4">Capital:</h5>
-                    <p class="card-text text-left">[capital]</p>
-            </div>
-            <div class="row">
                     <h5 class="card-text text-left pr-2 pl-4">Country code:</h5>
                     <p class="card-text text-left">{this.state.geoData.code}</p>
             </div>
             <div class="row">
-                    <h5 class="card-text text-left pr-2 pl-4">Population: [capital or country??]</h5>
+                    <h5 class="card-text text-left pr-2 pl-4">Capital:</h5>
+                    <p class="card-text text-left">{this.props.capital}</p>
+            </div>
+            <div class="row">
+                    <h5 class="card-text text-left pr-2 pl-4">Capital Population:</h5>
                     <p class="card-text text-left">{this.state.geoData.population1}</p>
             </div>
             <div class="row">
-                    <h5 class="card-text text-left pr-2 pl-4">PLEASE someone else come up with some stuff</h5>
-                    <p class="card-text text-left">please</p>
+                    <h5 class="card-text text-left pr-2 pl-4">Area:</h5>
+                    <p class="card-text text-left">{this.props.area} km<sup>2</sup></p>
+            </div>
+            <div class="row">
+                    <h5 class="card-text text-left pr-2 pl-4">Language:</h5>
+                    <p class="card-text text-left">{this.props.language}</p>
+            </div>
+            <div class="row">
+                    <h5 class="card-text text-left pr-2 pl-4">Currency:</h5>
+                    <p class="card-text text-left">{this.props.currency}</p>
+            </div>
+            <div class="row">
+                    <h5 class="card-text text-left pr-2 pl-4">Religion:</h5>
+                    <p class="card-text text-left">{this.props.religion}</p>
             </div>
 
           </div>
         </div> 
         
-        {/*food*/}
-        <div class=" card m-2">
-            <h5 class="card-header">Food</h5>
-          <div class="card-body">
-                <div class="card border-secondary mb-3">
-                    <img class="card-img-top" src={"https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"} alt="Card image cap"/>
-                    <p>{this.state.recipeData.image}</p>
-        
-                    <div class="card-body text-dark">
-                        <h4 class="card-title text-left">{this.state.recipeData.title}</h4>
-                        <p class="card-text text-left">Prepare in {this.state.recipeData.prepTime} minutes | Makes {this.state.recipeData.servings} servings</p>
-                        <a class="btn btn-outline-danger" href={this.state.recipeData.sourceurl}>
-                            Learn to Make It
-                        </a>
-                    </div>
-                </div>
-          </div>
-        </div> 
-        
-        {/*clothing*/}
-        <div class=" card m-2">
-            <h5 class="card-header">Clothes</h5>
-            <div class="card-body">
-                <h5 class="card-title">Learn to wear [clothes]</h5>
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vMCS6gT8SzQ" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div> 
-        
-        {/*music*/}
-        <div class=" card m-2">
-            <h5 class="card-header">Music</h5>
-            <div class="card-body">
-                <h5 class="card-title">[a description of music]</h5>
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Wqn-7ZkYUYM" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div> 
-        
-        {/*news*/}
+                {/*news*/}
         <div class=" card m-2">
             <h5 class="card-header">News</h5>
           <div class="card-body">
                 <div class="card border-secondary mb-3">
-                    <img class="card-img-top" src={"https://joebalestrino.com/wp-content/uploads/2019/02/Marketplace-Lending-News.jpg"} alt="Card image cap"/>
-                    <img class="card-img-top" src={this.state.imgData.news} alt="Card image cap"/>
+                    <img class="card-img-top card-img-top-stretch" src={"https://lh3.googleusercontent.com/proxy/f2dPC0AfLkKZcot70wlcx9SER592Ss4gEtAuvNGouM53PmSurcOb2Ps6-4QpMQ189Oi-Xzve6huTWek-SmL_h7Ovr7BB5OhAomNEXZ6kdKKFJKdF7sNQ3A"} alt="Card image cap"/>
+        {/*<img class="card-img-top" src={this.state.imgData.news} alt="Card image cap"/>*/}
                     <div class="card-body text-dark">
-                        <h4 class="card-title text-left">{this.state.newsData.title} [this has index 0... can we get more?]</h4>
+                        <h4 class="card-title text-left">{this.state.newsData.title}</h4>
                         <p class="card-text text-left ">{this.state.newsData.description}</p>
                         <p class="card-text text-left text-muted">Provided by {this.state.newsData.provider} | {this.state.newsData.date}</p>
                         <a class="btn btn-outline-danger" href={this.state.newsData.url}>
@@ -258,12 +236,81 @@ class countryPage extends React.Component{
         
         {/*Cultural facts*/}
         <div class=" card m-2">
-            <h5 class="card-header">Cultural Facts</h5>
+            <h5 class="card-header">Culture</h5>
           <div class="card-body">
+                <h5 class="card-title">{this.props.culture}</h5>
                 <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/sewhedyC0F0" allowfullscreen></iframe>
+                  <iframe class="embed-responsive-item" src={this.props.cultureUrl} allowfullscreen></iframe>
                 </div>
           </div>
+        </div> 
+        
+                {/*clothing*/}
+        <div class=" card m-2">
+            <h5 class="card-header">Clothes</h5>
+            <div class="card-body">
+                <h5 class="card-title">{this.props.clothes}</h5>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src={this.props.clothesUrl} allowfullscreen></iframe>
+                </div>
+            </div>
+        </div> 
+        
+        {/*food*/}
+        <div class=" card m-2">
+            <h5 class="card-header">Food</h5>
+          <div class="card-body">
+                <div class="card border-secondary mb-3">
+                    <img class="card-img-top card-img-top-stretch" src={"https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"} alt="Card image cap"/>
+                   {/* <p>{this.state.recipeData.image}</p>*/}
+        
+                    <div class="card-body text-dark">
+                        <h4 class="card-title text-left">{this.state.recipeData.title}</h4>
+                        <p class="card-text text-left">Prepare in {this.state.recipeData.prepTime} minutes | Makes {this.state.recipeData.servings} servings</p>
+                        <a class="btn btn-outline-danger" href={this.state.recipeData.sourceurl}>
+                            Learn to Make It
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="card border-secondary mb-3">
+                    <img class="card-img-top card-img-top-stretch" src={"https://post.healthline.com/wp-content/uploads/2020/09/healthy-eating-ingredients-1200x628-facebook-1200x628.jpg"} alt="Card image cap"/>
+                    {/* <p>{this.state.recipeData.image1}</p>*/}
+        
+                    <div class="card-body text-dark">
+                        <h4 class="card-title text-left">{this.state.recipeData.title1}</h4>
+                        <p class="card-text text-left">Prepare in {this.state.recipeData.prepTime1} minutes | Makes {this.state.recipeData.servings1} servings</p>
+                        <a class="btn btn-outline-danger" href={this.state.recipeData.sourceurl1}>
+                            Learn to Make It
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="card border-secondary mb-3">
+                    <img class="card-img-top card-img-top-stretch" src={"https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"} alt="Card image cap"/>
+                    {/* <p>{this.state.recipeData.image2}</p>*/}
+        
+                    <div class="card-body text-dark">
+                        <h4 class="card-title text-left">{this.state.recipeData.title2}</h4>
+                        <p class="card-text text-left">Prepare in {this.state.recipeData.prepTime2} minutes | Makes {this.state.recipeData.servings2} servings</p>
+                        <a class="btn btn-outline-danger" href={this.state.recipeData.sourceurl2}>
+                            Learn to Make It
+                        </a>
+                    </div>
+                </div>
+          </div>
+        </div> 
+        
+        
+                {/*music*/}
+        <div class=" card m-2">
+            <h5 class="card-header">Music</h5>
+            <div class="card-body">
+                <h5 class="card-title">{this.props.music}</h5>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src={this.props.musicUrl} allowfullscreen></iframe>
+                </div>
+            </div>
         </div> 
 
         {/*Interesting Locations*/}
@@ -333,9 +380,9 @@ class countryPage extends React.Component{
         
         {/*next button*/}
         <div class="col-6">
-            <div class="btn btn-outline-light">
+            <a class="btn btn-outline-light" href="/Japan">
                 <h3>Next</h3>
-            </div>
+            </a>
         </div>
     </div>
 
@@ -346,4 +393,4 @@ class countryPage extends React.Component{
   
 }
 
-export default countryPage
+export default CountryPage;

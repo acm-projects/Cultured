@@ -10,7 +10,7 @@ router.get('/:cuisine', (req, res) => {
 		"limitLicense": "true",
 		"tags": cuisine,
 
-		"number": "1"
+		"number": "3"
 	});
 
 	recReq.headers({

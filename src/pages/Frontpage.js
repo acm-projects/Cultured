@@ -19,9 +19,9 @@ class frontPage extends React.Component{
         </div>
         
         
-        {/*right button*/}
+        {/*random button*/}
             <div className="text-center">
-                <a class="btn btn-danger mt-3 mb-3" href="/Country" role="button">
+                <a class="btn btn-danger mt-3 mb-3" href="/Nigeria" role="button">
                     <h4> Visit Random! </h4>
                 </a>
             </div>
