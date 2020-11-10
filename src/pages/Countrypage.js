@@ -220,7 +220,7 @@ class CountryPage extends React.Component{
             <h5 class="card-header">News</h5>
           <div class="card-body">
                 <div class="card border-secondary mb-3">
-                    <img class="card-img-top card-img-top-stretch" src={"https://lh3.googleusercontent.com/proxy/f2dPC0AfLkKZcot70wlcx9SER592Ss4gEtAuvNGouM53PmSurcOb2Ps6-4QpMQ189Oi-Xzve6huTWek-SmL_h7Ovr7BB5OhAomNEXZ6kdKKFJKdF7sNQ3A"} alt="Card image cap"/>
+        {/*<img class="card-img-top card-img-top-stretch" src={"https://lh3.googleusercontent.com/proxy/f2dPC0AfLkKZcot70wlcx9SER592Ss4gEtAuvNGouM53PmSurcOb2Ps6-4QpMQ189Oi-Xzve6huTWek-SmL_h7Ovr7BB5OhAomNEXZ6kdKKFJKdF7sNQ3A"} alt="Card image cap"/>
         {/*<img class="card-img-top" src={this.state.imgData.news} alt="Card image cap"/>*/}
                     <div class="card-body text-dark">
                         <h4 class="card-title text-left">{this.state.newsData.title}</h4>
@@ -261,8 +261,7 @@ class CountryPage extends React.Component{
             <h5 class="card-header">Food</h5>
           <div class="card-body">
                 <div class="card border-secondary mb-3">
-                    <img class="card-img-top card-img-top-stretch" src={"https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"} alt="Card image cap"/>
-                   {/* <p>{this.state.recipeData.image}</p>*/}
+                    <img class="card-img-top card-img-top-stretch" src={this.state.recipeData.image} alt="Card image cap"/>
         
                     <div class="card-body text-dark">
                         <h4 class="card-title text-left">{this.state.recipeData.title}</h4>
@@ -274,8 +273,7 @@ class CountryPage extends React.Component{
                 </div>
         
                 <div class="card border-secondary mb-3">
-                    <img class="card-img-top card-img-top-stretch" src={"https://post.healthline.com/wp-content/uploads/2020/09/healthy-eating-ingredients-1200x628-facebook-1200x628.jpg"} alt="Card image cap"/>
-                    {/* <p>{this.state.recipeData.image1}</p>*/}
+                    <img class="card-img-top card-img-top-stretch" src={this.state.recipeData.image1} alt="Card image cap"/>
         
                     <div class="card-body text-dark">
                         <h4 class="card-title text-left">{this.state.recipeData.title1}</h4>
@@ -287,8 +285,7 @@ class CountryPage extends React.Component{
                 </div>
         
                 <div class="card border-secondary mb-3">
-                    <img class="card-img-top card-img-top-stretch" src={"https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"} alt="Card image cap"/>
-                    {/* <p>{this.state.recipeData.image2}</p>*/}
+                    <img class="card-img-top card-img-top-stretch" src={this.state.recipeData.image2} alt="Card image cap"/>
         
                     <div class="card-body text-dark">
                         <h4 class="card-title text-left">{this.state.recipeData.title2}</h4>

@@ -81,7 +81,7 @@ class App extends React.Component {
             flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1280px-Flag_of_Canada_%28Pantone%29.svg.png"} />} />
         
             //japan
-            <Route path="/Japan" exact render={() => <CountryPage title={"Japan"} capital={"Tokyo"} foodTag={"japan"} area={"377,916"} currency={"yen"} language={"Japanese"} religion={"Shinto, Buddhism"}
+            <Route path="/Japan" exact render={() => <CountryPage title={"Japan"} capital={"Tokyo"} foodTag={"chinese"} area={"377,916"} currency={"yen"} language={"Japanese"} religion={"Shinto, Buddhism"}
         
             clothes={""} clothesUrl={"https://www.youtube.com/embed/vCRjSLNHr44"}
         
@@ -103,7 +103,7 @@ class App extends React.Component {
             flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/1280px-Flag_of_Mexico.svg.png"} />} />
         
             //nigeria
-            <Route path="/Nigeria" exact render={() => <CountryPage title={"Nigeria"} capital={"Abuja"} foodTag={"african"} area={"923,769"} currency={"Naira"} language={"Yoruba, Hausa, Igbo"} religion={"Islam, Christianity"}
+            <Route path="/Nigeria" exact render={() => <CountryPage title={"Nigeria"} capital={"Abuja"} foodTag={"mediterranean"} area={"923,769"} currency={"Naira"} language={"Yoruba, Hausa, Igbo"} religion={"Islam, Christianity"}
             //for unknown reasons recipe API wont call african food, but only from react code
         
             clothes={""} clothesUrl={"https://www.youtube.com/embed/pAioOlHmIvk"}
@@ -126,7 +126,7 @@ class App extends React.Component {
             flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Romania.svg/1280px-Flag_of_Romania.svg.png"} />} />
         
             //uganda
-            <Route path="/Uganda" exact render={() => <CountryPage title={"Uganda"} capital={"Kampala"} foodTag={"african"} area={"241,038"} currency={"Ugandan Shilling"} language={"English, Swahili"} religion={"Christianity, Islam"}
+            <Route path="/Uganda" exact render={() => <CountryPage title={"Uganda"} capital={"Kampala"} foodTag={"mediterranean"} area={"241,038"} currency={"Ugandan Shilling"} language={"English, Swahili"} religion={"Christianity, Islam"}
         
             clothes={"Learn about the Gomesi"} clothesUrl={"https://www.youtube.com/embed/SJucZbxmcMk"}
         
