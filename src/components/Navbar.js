@@ -26,16 +26,15 @@ class Navbar extends React.Component{
                 {/*other buttons*/}
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0 pr-5">
                     {/*random button*/}
-                  <li class="nav-item btn btn-outline-light btn-">
-                    <a>Visit Random</a>
-                  </li>
+                  <a class="nav-item btn btn-outline-light btn-" href="/Brazil">
+                    Visit Random
+                  </a>
                 </ul>
-
-                {/*search bar*/}
+                {/*search bar
                 <form class="form-inline">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
                     <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                </form>*/}
 
             </div>
         

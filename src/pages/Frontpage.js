@@ -19,9 +19,9 @@ class frontPage extends React.Component{
         </div>
         
         
-        {/*right button*/}
+        {/*random button*/}
             <div className="text-center">
-                <a class="btn btn-danger mt-3 mb-3" href="/Country" role="button">
+                <a class="btn btn-danger mt-3 mb-3" href="/Nigeria" role="button">
                     <h4> Visit Random! </h4>
                 </a>
             </div>
@@ -45,8 +45,8 @@ class frontPage extends React.Component{
         
         {/*description*/}
         <div className="container pl-5 pr-5 pt-3 pb-3 bg-white rounded">
-            <p>Cultured is a virtual experience that immerses you in the culture of countries around the world...</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce luctus bibendum ligula quis faucibus. Aliquam erat volutpat. Pellentesque ut condimentum ipsum. Donec nibh ante, bibendum eu consequat laoreet, fringilla ut justo. Aliquam tempus nisi eu dolor tincidunt pretium. Fusce a dolor vel lacus pharetra euismod vitae a nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur eget quam et velit finibus dignissim vitae eu magna. Nulla sem purus, consectetur ac libero non, egestas posuere augue. Cras sit amet metus non elit auctor malesuada. Morbi id dui viverra, interdum ante laoreet, lacinia metus.</p>
+            <p>Cultured is a virtual experience that immerses you in the culture of countries around the world.</p>
+            <p></p>
         </div>
         
       </div>

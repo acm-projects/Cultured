@@ -9,7 +9,8 @@ router.get('/:cuisine', (req, res) => {
 		"apiKey": "7662bab9f8254d1ea497a542d7c8e4e5",
 		"limitLicense": "true",
 		"tags": cuisine,
-		"number": "1"
+
+		"number": "3"
 	});
 
 	recReq.headers({

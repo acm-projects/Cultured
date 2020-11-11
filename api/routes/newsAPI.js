@@ -9,7 +9,7 @@ router.get('/:country', (req, res) => {
 	newsReq.query({
 		"toPublishedDate": "null",
 		"fromPublishedDate": "null",
-		"pageSize": "1",
+		"pageSize": "3",
 		"autoCorrect": "false",
 		"q": data,
 		"pageNumber": "1"
