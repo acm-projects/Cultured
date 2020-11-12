@@ -8,7 +8,7 @@ class CountryPage extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            newsData: { title: null, url: null, description: null, provider: null, date: null },
+            newsData: { title: null, url: null, description: null, provider: null, date: null, title1: null, url1: null, description1: null, provider1: null, date1: null },
             recipeData: { image: null, sourceurl: null, summary: null, title:null, prepTime: null, servings:null},
             imgData: { news: null },
             geoData: {lat: null, lon: null, timezone: null, population1: null, code: null},
@@ -16,21 +16,22 @@ class CountryPage extends React.Component{
                         name1: null, kinds1: null, lat1: null, lon1: null,
                         name2: null, kinds2: null, lat2: null, lon2: null},
             youtubeData: {title: null, id: null},
-            generalImgData: {flag: null, location: null}
+            generalImgData: {flag: null, location: null},
+            countryData: {name: null, capital: null, code3: null, code2: null, location: null, recipieSearchTerm: null, fastFacts: null, sports: null, taboos: null, history: null, religion: null, clothes: null, timezone: null, countryPage: null}
         };
     }
     callNewsAPI = async (country) => {
-        let response = await fetch("http://localhost:5000/newsAPI/" + country)
+        let response = await fetch("http://localhost:5001/newsAPI/" + country)
               .then(body => body.json())
               .then(body => {
-                  this.setState({ newsData: { title: body.data.value[0].title, url: body.data.value[0].url, description: body.data.value[0].description, provider: body.data.value[0].provider.name, date: body.data.value[0].datePublished} })
+                  this.setState({ newsData: { title: body.data.value[0].title, url: body.data.value[0].url, description: body.data.value[0].description, provider: body.data.value[0].provider.name, date: body.data.value[0].datePublished, title1: body.data.value[1].title, url1: body.data.value[1].url, description1: body.data.value[1].description, provider1: body.data.value[1].provider.name, date1: body.data.value[1].datePublished} })
                   this.callImgAPI();
               })
           // if (response.status !== 200) throw Error(body.message);
 
     };
     callRecipeAPI = async (cuisine) => {
-        let response = await fetch('http://localhost:5000/recipeAPI/' + cuisine)
+        let response = await fetch('http://localhost:5001/recipeAPI/' + cuisine)
             .then(body => body.json())
             .then(body => {
                 this.setState({ recipeData: { image: body.data.recipes[0].image, sourceurl: body.data.recipes[0].sourceUrl, summary: body.data.recipes[0].summary, title:body.data.recipes[0].title, prepTime: body.data.recipes[0].readyInMinutes, servings: body.data.recipes[0].servings,
@@ -44,7 +45,7 @@ class CountryPage extends React.Component{
     };
     callImgAPI = async () => {
        /* var search = this.state.newsData.title;
-        let response = await fetch('http://localhost:5000/imgAPI/' + search)
+        let response = await fetch('http://localhost:5001/imgAPI/' + search)
             .then(body => body.json())
             .then(body => {
                 this.setState({ imgData: { news:  body.data.value[0].url} })
@@ -53,8 +54,11 @@ class CountryPage extends React.Component{
 
     };
     callGeoAPI = async (capitol) => {
+        let response = await fetch('http://localhost:5001/geoAPI/' + capitol)
 
-        let response = await fetch('http://localhost:5000/geoAPI/' + capitol)
+        /*let response = await fetch('http://localhost:5001/geoAPI/' + capitol, { mode: "no-cors", headers: {
+          "Access-Control-Allow-Origin" : "*", "Access-Control-Allow-Credentials" : true
+        }})*/
             .then(body => body.json())
             .then(body => {
                 this.setState({ geoData: { lat: body.data.lat, lon: body.data.lon, timezone: body.data.timezone, population1: body.data.population, code: body.data.country} })
@@ -66,7 +70,7 @@ class CountryPage extends React.Component{
     };
     callPlaceAPI = async () => {
         var lat = this.state.geoData.lat, lon = this.state.geoData.lon;
-        let response = await fetch('http://localhost:5000/placeAPI/' + lat + "/" + lon)
+        let response = await fetch('http://localhost:5001/placeAPI/' + lat + "/" + lon)
             .then(body => body.json())
             .then(body => {
                 this.setState({ placeData: { name: body.data[0].name, kinds: body.data[0].kinds, lat: body.data[0].point.lat, lon: body.data[0].point.lon, name1: body.data[1].name, kinds1: body.data[1].kinds, lat1: body.data[1].point.lat, lon1: body.data[1].point.lon, name2: body.data[2].name, kinds2: body.data[2].kinds, lat2: body.data[2].point.lat, lon2: body.data[2].point.lon } })
@@ -78,7 +82,7 @@ class CountryPage extends React.Component{
     callYoutubeAPI = async () => {
     
        /* var lat = this.state.geoData.lat, lon = this.state.geoData.lon;
-        let response = await fetch('http://localhost:5000/youtubeAPI/' + lat + '/' + lon)
+        let response = await fetch('http://localhost:5001/youtubeAPI/' + lat + '/' + lon)
             .then(body => body.json())
             .then(body => {
                 console.log(body);
@@ -89,7 +93,7 @@ class CountryPage extends React.Component{
     };
     callGeneralImgAPIFlag = async (search) => {
         /*
-        let response = await fetch('http://localhost:5000/generalImgAPI/' + search)
+        let response = await fetch('http://localhost:5001/generalImgAPI/' + search)
             .then(body => body.json())
             .then(body => {
                 console.log(body);
@@ -102,7 +106,7 @@ class CountryPage extends React.Component{
     callGeneralImgAPILocation = async () => {
         /*
         var search = this.state.placeData.name;
-        let response = await fetch('http://localhost:5000/generalImgAPI/' + search)
+        let response = await fetch('http://localhost:5001/generalImgAPI/' + search)
             .then(body => body.json())
             .then(body => {
                 console.log(body);
@@ -112,6 +116,31 @@ class CountryPage extends React.Component{
         // if (response.status !== 200) throw Error(body.message);
 
     };
+
+    displayCountryData = async () => {
+      console.log("here 1");
+      let response = await fetch('http://localhost:5000/api/hello')
+      .then(body => body.json())
+      .then(body => {
+          console.log(body);
+          //var data = body.name;
+          this.setState({ countryData: { name: body.information.name, capital: body.information.capital, clothes: body.information.clothes, code2: body.information.code2,
+           code3: body.information.code3, countryPage: body.information.countryPage, fastFacts: body.information.fastFacts, history: body.information.history,
+          location: body.information.location, recipieSearchTerm: body.information.recipieSearchTerm, religion: body.information.religion, sports: body.information.sports,
+          taboos: body.information.taboos, timezone: body.information.timezone } })
+      })
+       console.log("here 2");
+    console.log(response);
+    /*this.setState ({
+      countryData: {name: body.name}
+    })
+    console.log(this.state.countryData.name);
+    console.log(body); 
+    if (response.status !== 200) throw Error(body.message);*/
+    }
+
+
+
     componentDidMount() {
 
         this.callNewsAPI(this.props.title)
@@ -122,6 +151,8 @@ class CountryPage extends React.Component{
 
          this.callGeoAPI(this.props.capital)
             .catch(err => console.log(err))
+        
+          this.displayCountryData().catch(err => console.log(err))
 
         //this.callGeneralImgAPIFlag("canadian flag")
             //.catch(err => console.log(err))
@@ -145,6 +176,9 @@ class CountryPage extends React.Component{
             <div class="card m-2">
               <div class="card-body">
                 <h1 class="card-title">{this.props.title}</h1>
+        <h1 class="card-title">{this.state.countryData.name}</h1>
+        <p class="card-text">{this.state.countryData.timezone}</p>
+        <p class="card-text text-left">{this.state.countryData.fastFacts}</p>
               </div>
             </div>
           </div>
@@ -220,13 +254,27 @@ class CountryPage extends React.Component{
             <h5 class="card-header">News</h5>
           <div class="card-body">
                 <div class="card border-secondary mb-3">
-        {/*<img class="card-img-top card-img-top-stretch" src={"https://lh3.googleusercontent.com/proxy/f2dPC0AfLkKZcot70wlcx9SER592Ss4gEtAuvNGouM53PmSurcOb2Ps6-4QpMQ189Oi-Xzve6huTWek-SmL_h7Ovr7BB5OhAomNEXZ6kdKKFJKdF7sNQ3A"} alt="Card image cap"/>
-        {/*<img class="card-img-top" src={this.state.imgData.news} alt="Card image cap"/>*/}
+        {/*<img class="card-img-top card-img-top-stretch" src={"https://lh3.googleusercontent.com/proxy/f2dPC0AfLkKZcot70wlcx9SER592Ss4gEtAuvNGouM53PmSurcOb2Ps6-4QpMQ189Oi-Xzve6huTWek-SmL_h7Ovr7BB5OhAomNEXZ6kdKKFJKdF7sNQ3A"} alt="Card image cap"/>*/}
+
                     <div class="card-body text-dark">
                         <h4 class="card-title text-left">{this.state.newsData.title}</h4>
                         <p class="card-text text-left ">{this.state.newsData.description}</p>
                         <p class="card-text text-left text-muted">Provided by {this.state.newsData.provider} | {this.state.newsData.date}</p>
                         <a class="btn btn-outline-danger" href={this.state.newsData.url}>
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+        <div class="card-body">
+                <div class="card border-secondary mb-3">
+        {/*<img class="card-img-top card-img-top-stretch" src={"https://lh3.googleusercontent.com/proxy/f2dPC0AfLkKZcot70wlcx9SER592Ss4gEtAuvNGouM53PmSurcOb2Ps6-4QpMQ189Oi-Xzve6huTWek-SmL_h7Ovr7BB5OhAomNEXZ6kdKKFJKdF7sNQ3A"} alt="Card image cap"/>*/}
+                    <div class="card-body text-dark">
+                        <h4 class="card-title text-left">{this.state.newsData.title1}</h4>
+                        <p class="card-text text-left ">{this.state.newsData.description1}</p>
+                        <p class="card-text text-left text-muted">Provided by {this.state.newsData.provider1} | {this.state.newsData.date1}</p>
+                        <a class="btn btn-outline-danger" href={this.state.newsData.url1}>
                             Read More
                         </a>
                     </div>
