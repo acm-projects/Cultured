@@ -16,19 +16,73 @@ import countryTrash from "./pages/countryTrash"
 
 import './addedClasses.css';
 
+/*
+const {MongoClient} = require('mongodb');
+async function main(){
+    const uri = "<database>";
+ 
+
+    const client = new MongoClient(uri);
+ 
+    try {
+        // Connect to the MongoDB cluster
+        await client.connect();
+        
+        
+        console.log("before obtaining result");
+        var result = await client.db("Cultured").collection("Counties").findOne({ name: "USA"});
+        console.log("after obtaining result");
+        console.log(result);
+ 
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+}
+
+    console.log("after not obtaining 1");
+
+*/
+
+
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
-        };
+            list: null
     }
+}
+    
+    displayCountryData = async () => {
+      console.log("here 1");
+      let response = await fetch('http://localhost:5000/api/all')
+      .then(body => body.json())
+      .then(body => {
+       console.log(body);
+          var data = body.name;
+          this.setState({ list:body})
+      });
+       console.log("here 2");
+    console.log(response);
+    /*this.setState ({
+      countryData: {name: body.name}
+    })
+    console.log(this.state.countryData.name);
+    console.log(body); 
+    if (response.status !== 200) throw Error(body.message);*/
+    };
 
-    componentDidMount() {
 
-    }
+
+    componentDidMount() {   
+          this.displayCountryData().catch(err => console.log(err))
+      };
+    
 
     render() {
+        
+        //main();
         
         /*
         // assuming data is like [{path:'/', name:'Home'}, {path: '/page1', name: 'Page 1'}, ...] 
@@ -42,6 +96,8 @@ class App extends React.Component {
         */
 
   return (
+      
+      
       <div className="App">
       
             

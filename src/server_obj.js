@@ -1,5 +1,7 @@
 const {MongoClient} = require('mongodb');
 
+var COUNTRIES;
+
 const uri = "mongodb+srv://Aarushi:tJSNNM7pF8wDSEh3@cluster0.tkmjp.gcp.mongodb.net/test?retryWrites=true&w=majority";
     const client = new MongoClient(uri,{ useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -14,8 +16,10 @@ async function main(){
     
     try{
       await client.connect();  
-      await listDatabases(client);
-      await findOneDocByName(client, "USA");
+      //await listDatabases(client);
+      //await findOneDocByName(client, "USA");
+        await findAll(client);
+        await parseDocs(client)
     } catch (e){
         console.error(e);
     } finally {
@@ -29,6 +33,32 @@ async function listDatabases(client){
 
     console.log("Databases:");
     databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+}
+
+async function findAll(client){
+    const result = await client.db("Cultured").collection("Counties").find({})
+        .sort({ name: 1 })
+        .toArray()
+        .then(items => {
+    console.log(`Successfully found ${items.length} documents.`)
+    return items
+  });
+    //findOne({ name: "USA" });
+
+    console.log("All:");
+    console.log(result);
+    return result;
+}
+
+async function parseDocs(client){
+    let COUNTRIES = [];
+    const list = await client.db("Cultured").collection("Countries").find().forEach(function(doc)
+    {
+        let entry = COUNTRIES.push({location: doc.location, countryName: doc.countryName, countryCode: doc.countryCode, countryPage: doc.countryPage });
+
+    })
+    console.log(COUNTRIES);
+    return COUNTRIES;
 }
 
 async function createDoc(client, newDoc){
@@ -64,11 +94,29 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/api/hello', (req, res) => {
+app.get('/api/hello/:country', (req, res) => {
+    client.connect();  
+  res.send({ information: result});
+});
+
+app.get('/api/hell', (req, res) => {
     client.connect();  
     listDatabases(client);
     findOneDocByName(client, "Sample");
   res.send({ information: result});
+});
+
+app.get('/api/all', (req, res) => {
+    client.connect();  
+    //listDatabases(client);
+    //findOneDocByName(client, "Sample");
+    var result = parseDocs(client);
+    console.log(COUNTRIES);
+    res.send({hi: "aarushi", info: COUNTRIES})
+    client.close(); 
+
+
+
 });
 
 app.post('/api/world', (req, res) => {

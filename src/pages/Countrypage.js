@@ -1,8 +1,11 @@
 import React from 'react'
 import ReactPlayer from "react-player"
 import ".\\b.css"
+//import {main, yote} from "../server_obj.js";
+
 
 class CountryPage extends React.Component{
+    
     
     
     constructor(props) {
@@ -20,6 +23,8 @@ class CountryPage extends React.Component{
             countryData: {name: null, capital: null, code3: null, code2: null, location: null, recipieSearchTerm: null, fastFacts: null, sports: null, taboos: null, history: null, religion: null, clothes: null, timezone: null, countryPage: null}
         };
     }
+
+    
     callNewsAPI = async (country) => {
         let response = await fetch("http://localhost:5001/newsAPI/" + country)
               .then(body => body.json())
@@ -116,7 +121,7 @@ class CountryPage extends React.Component{
         // if (response.status !== 200) throw Error(body.message);
 
     };
-
+/*
     displayCountryData = async () => {
       console.log("here 1");
       let response = await fetch('http://localhost:5000/api/hello')
@@ -137,7 +142,7 @@ class CountryPage extends React.Component{
     console.log(this.state.countryData.name);
     console.log(body); 
     if (response.status !== 200) throw Error(body.message);*/
-    }
+ //   }
 
 
 
@@ -152,7 +157,7 @@ class CountryPage extends React.Component{
          this.callGeoAPI(this.props.capital)
             .catch(err => console.log(err))
         
-          this.displayCountryData().catch(err => console.log(err))
+    //      this.displayCountryData().catch(err => console.log(err))
 
         //this.callGeneralImgAPIFlag("canadian flag")
             //.catch(err => console.log(err))
@@ -186,7 +191,6 @@ class CountryPage extends React.Component{
         </div>
     </div>
 
-        
     <div class="card-columns col">
         
                 <div class="">
