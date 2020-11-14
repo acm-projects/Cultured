@@ -3,7 +3,7 @@ import constants from "../components/map/map-constants";
 function Next() {
 
     //var countries2 = [];
-    let countries = ["/UnitedStates", "/Canada", "/Mexico", "/Nigeria", "/Uganda", "/Brazil", "/Romania", "/Japan"];
+    let countries = ["/United-States-of-America", "/Canada", "/Mexico", "/Nigeria", "/Uganda", "/Brazil", "/Romania", "/Japan"];
 
     // Get the current pathname
     let currentPath = window.location.pathname;

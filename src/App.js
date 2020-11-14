@@ -57,13 +57,13 @@ class App extends React.Component {
     displayCountryData = async () => {
       console.log("here 1");
       let response = await fetch('http://localhost:5000/api/all')
-      .then(body => body.json())
+      /*.then(body => body.json())
       .then(body => {
        console.log(body);
           var data = body.name;
           this.setState({ list:body})
       });
-       console.log("here 2");
+       console.log("here 2");*/
     console.log(response);
     /*this.setState ({
       countryData: {name: body.name}

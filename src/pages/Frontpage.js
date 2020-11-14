@@ -1,6 +1,8 @@
 import React from 'react'
-
+import Next from "../functions/Next";
 import Map from "../components/map/Map"
+//import "CulturedLogo.png"
+import img from './logo.png'
 
 class frontPage extends React.Component{
   constructor(props){
@@ -18,10 +20,9 @@ class frontPage extends React.Component{
             </div>
         </div>
         
-        
         {/*random button*/}
             <div className="text-center">
-                <a class="btn btn-danger mt-3 mb-3" href="/Nigeria" role="button">
+                <a class="btn btn-danger mt-3 mb-3" onClick={ () => Next() } role="button">
                     <h4> Visit Random! </h4>
                 </a>
             </div>
@@ -44,9 +45,14 @@ class frontPage extends React.Component{
 
         
         {/*description*/}
-        <div className="container pl-5 pr-5 pt-3 pb-3 bg-white rounded">
-            <p>Cultured is a virtual experience that immerses you in the culture of countries around the world.</p>
-            <p></p>
+        <div className="container pl-5 pr-5 pt-5 pb-3 bg-white rounded">
+
+            <p>Cultured is a web app that aims to fully immerse the user in the culture of a country of their choosing. Users can look up a country of their choosing in the front page, then click on the country to find out more information about it. If the user doesn't know which country to visit (or can't choose one), they can click on the random button and we’ll choose a country for you! Each country has its own page, so users can get fast facts about the country, the time zone, recipes for local food, national news, traditional attire, cultural education and popular tourist spots in the country. Information on these country pages is very up-to-date, and we're looking to add user authentication (via a login page), a translation feature to the country page so the user can learn more about the language spoken in particular cultures, and sponsored link revenue in the future.</p>
+            <div className="">
+                <img class="img-fluid logo" src={img}/>
+            </div>
+                        
+
         </div>
         
       </div>

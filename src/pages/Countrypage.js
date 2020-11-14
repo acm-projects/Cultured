@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactPlayer from "react-player"
 import ".\\b.css"
+import Next from "../functions/Next";
 //import {main, yote} from "../server_obj.js";
 
 
@@ -429,9 +430,9 @@ class CountryPage extends React.Component{
         
         {/*next button*/}
         <div class="col-6">
-            <a class="btn btn-outline-light" href="/Japan">
+            <div class="btn btn-outline-light" onClick={ () => Next() } role="button">
                 <h3>Next</h3>
-            </a>
+            </div>
         </div>
     </div>
 
