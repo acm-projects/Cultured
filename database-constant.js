@@ -5,7 +5,8 @@ async function main(){
     const client = new MongoClient(uri,{ useNewUrlParser: true, useUnifiedTopology: true });
     try{
       await client.connect();  
-      await parseDocs(client);
+      let COUNTRIES = await parseDocs(client);
+      return COUNTRIES;
     } catch (e){
         console.error(e);
     } finally {
@@ -22,7 +23,6 @@ async function parseDocs(client){
         let entry = COUNTRIES.push({location: doc.location, countryName: doc.countryName, countryCode: doc.countryCode, countryPage: doc.countryPage });
 
     })
-    COUNTRIES.forEach(function(item, index, array){
-        console.log(item);
-    })
+    console.log(COUNTRIES);
+    return COUNTRIES;
 }
