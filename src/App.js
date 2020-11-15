@@ -220,7 +220,7 @@ class App extends React.Component {
         
             clothes={""} clothesUrl={"https://www.youtube.com/embed/xY2Gm2EdhsU"}
         
-            music={""} musicUrl={"https://www.youtube.com/watch?v=xRTxf6FiVEI"}
+            music={""} musicUrl={"https://www.youtube.com/embed/xRTxf6FiVEI"}
         
             culture={""} cultureUrl={"https://www.youtube.com/embed/Qtan8kA8dOs"}
         
@@ -239,7 +239,7 @@ class App extends React.Component {
         
         
             //Philippines
-            <Route path="/Philippines" exact render={() => <CountryPage title={"Philippines"} capital={"Manila"} foodTag={"filipino"} area={"342,353"} currency={"Philippine Peso"} language={"Tagalog, English"} religion={"Catholic Christianity, Protestand Christianity"}
+            <Route path="/Philippines" exact render={() => <CountryPage title={"Philippines"} capital={"Manila"} foodTag={"vietnamese"} area={"342,353"} currency={"Philippine Peso"} language={"Tagalog, English"} religion={"Catholic Christianity, Protestand Christianity"}
         
             clothes={""} clothesUrl={"https://www.youtube.com/embed/4pXdvVQQ1pQ"}
         
@@ -263,7 +263,7 @@ class App extends React.Component {
         
         
             //Indonesia
-            <Route path="/Indonesia" exact render={() => <CountryPage title={"Indonesia"} capital={"Jakarta"} foodTag={"indonesian"} area={"1,904,569"} currency={"Indonesian Rupiah"} language={"Indonesian"} religion={"Muslim"}
+            <Route path="/Indonesia" exact render={() => <CountryPage title={"Indonesia"} capital={"Jakarta"} foodTag={"korean"} area={"1,904,569"} currency={"Indonesian Rupiah"} language={"Indonesian"} religion={"Muslim"}
         
             clothes={""} clothesUrl={"https://www.youtube.com/embed/6ev16pDe_hc"}
         
@@ -275,7 +275,7 @@ class App extends React.Component {
         
         
             //Thailand
-            <Route path="/Thailand" exact render={() => <CountryPage title={"Thailand"} capital={"Bangkok"} foodTag={"thai"} area={"513,120"} currency={"Thai Bhat"} language={"Thai"} religion={"Buddhism"}
+            <Route path="/Thailand" exact render={() => <CountryPage title={"Thailand"} capital={"Bangkok"} foodTag={"korean"} area={"513,120"} currency={"Thai Bhat"} language={"Thai"} religion={"Buddhism"}
         
             clothes={""} clothesUrl={"https://www.youtube.com/embed/TeGG6Z6N16M"}
         
@@ -286,8 +286,8 @@ class App extends React.Component {
             flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/800px-Flag_of_Thailand.svg.png"} />} />  
         
         
-            //Malaysian
-            <Route path="/Malaysian" exact render={() => <CountryPage title={"Malaysian"} capital={"Kuala Lumpur"} foodTag={"malaysian"} area={"330,803"} currency={"Malaysian ringgit"} language={"Malay"} religion={"Islam"}
+            //Malaysia
+            <Route path="/Malaysia" exact render={() => <CountryPage title={"Malaysia"} capital={"Kuala Lumpur"} foodTag={"indian"} area={"330,803"} currency={"Malaysian ringgit"} language={"Malay"} religion={"Islam"}
         
             clothes={""} clothesUrl={"https://www.youtube.com/embed/8HUfguoyvYc"}
         
@@ -309,19 +309,8 @@ class App extends React.Component {
         
             flagUrl={"https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile.svg"} />} />  
         
-            //Country
-            <Route path="/" exact render={() => <CountryPage title={""} capital={""} foodTag={""} area={""} currency={""} language={""} religion={""}
-        
-            clothes={""} clothesUrl={""}
-        
-            music={""} musicUrl={""}
-        
-            culture={""} cultureUrl={""}
-        
-            flagUrl={""} />} />  
-        
             //Egypt
-            <Route path="/Egypt" exact render={() => <CountryPage title={"Egypt"} capital={"Cairo"} foodTag={"african"} area={"1,010,408"} currency={"Egyptian Pound "} language={"Egyptian Arabic"} religion={"Sunni Islam"}
+            <Route path="/Egypt" exact render={() => <CountryPage title={"Egypt"} capital={"Cairo"} foodTag={"mediterranean"} area={"1,010,408"} currency={"Egyptian Pound "} language={"Egyptian Arabic"} religion={"Sunni Islam"}
         
             clothes={""} clothesUrl={"https://www.youtube.com/embed/foAtVsElRT0"}
         
@@ -354,7 +343,7 @@ class App extends React.Component {
             flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Finland.svg/1200px-Flag_of_Finland.svg.png"} />} />  
         
             //Kenya
-            <Route path="/Kenya" exact render={() => <CountryPage title={"Kenya"} capital={"Nairobi"} foodTag={"african"} area={"580,367"} currency={"Kenyan shilling"} language={"English, Swahili"} religion={"Christianity"}
+            <Route path="/Kenya" exact render={() => <CountryPage title={"Kenya"} capital={"Nairobi"} foodTag={"mediterranean"} area={"580,367"} currency={"Kenyan shilling"} language={"English, Swahili"} religion={"Christianity"}
         
             clothes={""} clothesUrl={"https://www.youtube.com/embed/enKp1Bp3CzA"}
         
@@ -396,6 +385,18 @@ class App extends React.Component {
             culture={""} cultureUrl={"https://www.youtube.com/embed/RVi9wfZe3XU"}
         
             flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Flag_of_Belize.svg/1200px-Flag_of_Belize.svg.png"} />} />  
+        
+        
+            //Country
+            <Route path="/" exact render={() => <CountryPage title={""} capital={""} foodTag={""} area={""} currency={""} language={""} religion={""}
+        
+            clothes={""} clothesUrl={""}
+        
+            music={""} musicUrl={""}
+        
+            culture={""} cultureUrl={""}
+        
+            flagUrl={""} />} />  
 
             <Redirect to="/" />
           </Switch>

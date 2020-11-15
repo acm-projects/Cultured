@@ -26,7 +26,8 @@ function Next() {
                     "/Kenya",
                     "/New-Zealand",
                     "/United-Kingdom",
-                    "/Belize"];
+                    //"/Belize"
+                    ];
 
     // Get the current pathname
     let currentPath = window.location.pathname;
