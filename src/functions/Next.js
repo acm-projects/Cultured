@@ -26,6 +26,21 @@ function Next() {
                     "/Kenya",
                     "/New-Zealand",
                     "/United-Kingdom",
+                    "/Italy",
+                     "/Greece",
+                     "/Spain",
+                     "/Russia",
+                     "/Argentina",
+                     "/Kazakhstan",
+                     "/Algeria",
+                     "/Greenland",
+                     "/Saudi-Arabia",
+                     "/Sudan",
+                     "/Libya",
+                     "/Iran",
+                     "/Mongolia",
+                     "/Peru",
+                     "/Chad"
                     //"/Belize"
                     ];
 

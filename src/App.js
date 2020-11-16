@@ -47,13 +47,15 @@ async function main(){
 
 
 class App extends React.Component {
+   /*
+    
     constructor(props) {
         super(props);
         this.state = {
             list: null
     }
 }
-    
+    /*
     displayCountryData = async () => {
       console.log("here 1");
       let response = await fetch('http://localhost:5000/api/all')
@@ -64,21 +66,21 @@ class App extends React.Component {
           this.setState({ list:body})
       });
        console.log("here 2");*/
-    console.log(response);
+    //console.log(response);
     /*this.setState ({
       countryData: {name: body.name}
     })
     console.log(this.state.countryData.name);
     console.log(body); 
     if (response.status !== 200) throw Error(body.message);*/
-    };
+   /* };
 
 
 
     componentDidMount() {   
           this.displayCountryData().catch(err => console.log(err))
       };
-    
+    */
 
     render() {
         
@@ -387,7 +389,172 @@ class App extends React.Component {
             flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Flag_of_Belize.svg/1200px-Flag_of_Belize.svg.png"} />} />  
         
         
-            //Country
+            //Italy
+            <Route path="/Italy" exact render={() => <CountryPage title={"Italy"} capital={"Rome"} foodTag={"italian"} area={"301,340"} currency={"Euro"} language={"Italian"} religion={"Christianity"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/DEbZrFVG-zo"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/aiENvviVSO4"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/T_f_U7XEhcc"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/1200px-Flag_of_Italy.svg.png"} />} />  
+        
+            //Greece
+            <Route path="/Greece" exact render={() => <CountryPage title={"Greece"} capital={"Athens"} foodTag={"mediterranean"} area={"131,957"} currency={"Euro"} language={"Greek"} religion={"Christianity"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/mWNoVial-9w"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/kG12C1oX5Eo"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/6bDrYTXQLu8"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/900px-Flag_of_Greece.svg.png"} />} />  
+        
+        //Spain
+            <Route path="/Spain" exact render={() => <CountryPage title={"Spain"} capital={"Madrid"} foodTag={"spanish"} area={"505,990"} currency={"Euro"} language={"Spanish"} religion={"Christianity"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/pn21YkAoY7M"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/MNWC4NMWfe8"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/5e9IHzfiipU"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/1125px-Flag_of_Spain.svg.png"} />} />  
+        
+        //Russia
+            <Route path="/Russia" exact render={() => <CountryPage title={"Russia"} capital={"Moscow"} foodTag={"eastern-european"} area={"17,098,246"} currency={"Russian ruble"} language={"Russian"} religion={"Christianity"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/5nOydHTc3S4"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/PlD84j7DcJU"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/HE6rSljTwdU"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/1200px-Flag_of_Russia.svg.png"} />} />  
+        
+        //Argentina
+            <Route path="/Argentina" exact render={() => <CountryPage title={"Argentina"} capital={"Buenos Aires"} foodTag={"spanish"} area={"2,780,400"} currency={"Peso"} language={"Spanish"} religion={"Christianity"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/duGe_WFR5EE"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/tIyc1A5F1DY"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/qia91ykg3g4"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/1200px-Flag_of_Argentina.svg.png"} />} />  
+        
+                    //Kazakhstan
+            <Route path="/Kazakhstan" exact render={() => <CountryPage title={"Kazakhstan"} capital={"Nur-Sultan"} foodTag={"eastern-european"} area={"2,724,900"} currency={"Tenge"} language={"Zazakh, Russian"} religion={"Islam"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/leiDah9P9Uk"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/7_QpkcqjZD0"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/2lTmvHk0mMc"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kazakhstan.svg/1200px-Flag_of_Kazakhstan.svg.png"} />} />  
+        
+            //Algeria
+            <Route path="/Algeria" exact render={() => <CountryPage title={"Algeria"} capital={"Algiers"} foodTag={"mediterranean"} area={"2,381,741"} currency={"Dinar"} language={"Arabic, Berber"} religion={"Islam"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/cA3rBSdc574"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/RHMzwIN4zN0"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/c9yJVF4zzYU"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/1200px-Flag_of_Algeria.svg.png"} />} />  
+        
+        //Greenland
+            <Route path="/Greenland" exact render={() => <CountryPage title={"Greenland"} capital={"Nuuk"} foodTag={"european"} area={"2,166,086"} currency={"Danish krone"} language={"Greenlandic, English, Danish"} religion={"Christianity"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/5zsa_vp8vb8"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/Gp-fckkHG7M"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/RYMEoFOZavs"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_Greenland.svg/1200px-Flag_of_Greenland.svg.png"} />} />  
+        
+        //Saudi Arabia
+            <Route path="/Saudi-Arabia" exact render={() => <CountryPage title={"Saudi Arabia"} capital={"Riyadh"} foodTag={"mediterranean"} area={"2,149,690"} currency={"Saudi Riyal"} language={"Arabic"} religion={"Islam"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/ber_XhUQQdc"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/6kKWtiNowB0"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/PvVEbJoDago"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/1200px-Flag_of_Saudi_Arabia.svg.png"} />} />  
+        
+        //Sudan
+            <Route path="/Sudan" exact render={() => <CountryPage title={"Sudan"} capital={"Khartoum"} foodTag={"mediterranean"} area={"1,886,068"} currency={"Sudanese pound"} language={"Arabic, English"} religion={"Islam"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/be-d-n2T114"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/ND4Jo2Z0gEs"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/X7To9avIQQQ"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_Sudan.svg/1200px-Flag_of_Sudan.svg.png"} />} />  
+        
+                    //Libya
+            <Route path="/Libya" exact render={() => <CountryPage title={"Libya"} capital={"Tripoli"} foodTag={"mediterranean"} area={"1,759,541"} currency={"Libyan dinar"} language={"Arabic"} religion={"Islam"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/jWVlgXFB-_g"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/bpYFxLVUbsA"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/TBEfVYBohzc"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Libya.svg/1200px-Flag_of_Libya.svg.png"} />} />  
+        
+            //Iran
+            <Route path="/Iran" exact render={() => <CountryPage title={"Iran"} capital={"Tehran"} foodTag={"mediterranean"} area={"1,648,195"} currency={"Rial"} language={"Persian"} religion={"Islam"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/jvR1JgOipWg"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/RKn_D6FNUL0"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/NWTLzKYKaQI"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/945px-Flag_of_Iran.svg.png"} />} />  
+        
+        //Mongolia
+            <Route path="/Mongolia" exact render={() => <CountryPage title={"Mongolia"} capital={"Ulaanbaatar"} foodTag={"chinese"} area={"1,566,000"} currency={"Togrog"} language={"Mongolian"} religion={"Buddhismn, Non-Religious"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/z4Y4-5iKnyA"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/v4xZUr0BEfE"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/Q_ME77BeKGE"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Mongolia.svg/1200px-Flag_of_Mongolia.svg.png"} />} />  
+        
+        //Peru
+            <Route path="/Peru" exact render={() => <CountryPage title={"Peru"} capital={"Lima"} foodTag={"latin-american"} area={"1,285,216"} currency={"Sol"} language={"Spanish"} religion={"Christianity"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/duGe_WFR5EE"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/M_gSydN_BYM"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/xCoUkpZUnc4"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Peru.svg/1200px-Flag_of_Peru.svg.png"} />} />  
+        
+        //Chad
+            <Route path="/Chad" exact render={() => <CountryPage title={"Chad"} capital={"N'Djamena"} foodTag={"mediterranean"} area={"1,284,000"} currency={"Central African CAF franc"} language={"French, Arabic"} religion={"Islam, Christianity"}
+        
+            clothes={""} clothesUrl={"https://www.youtube.com/embed/e2sk6-jA0QI"}
+        
+            music={""} musicUrl={"https://www.youtube.com/embed/8lyiixToyUU"}
+        
+            culture={""} cultureUrl={"https://www.youtube.com/embed/jJZ66hPQLe4"}
+        
+            flagUrl={"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flag_of_Chad.svg/1200px-Flag_of_Chad.svg.png"} />} />  
+        
+                //Country
             <Route path="/" exact render={() => <CountryPage title={""} capital={""} foodTag={""} area={""} currency={""} language={""} religion={""}
         
             clothes={""} clothesUrl={""}
