@@ -1,8 +1,13 @@
+
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
 import $ from 'jquery';
+
 import Popper from 'popper.js';
+
 
 
 import React from 'react';

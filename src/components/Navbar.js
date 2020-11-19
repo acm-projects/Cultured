@@ -1,4 +1,5 @@
 import React from 'react';
+import Next from "../functions/Next";
 
 class Navbar extends React.Component{
     render(){
@@ -26,7 +27,7 @@ class Navbar extends React.Component{
                 {/*other buttons*/}
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0 pr-5">
                     {/*random button*/}
-                  <a class="nav-item btn btn-outline-light btn-" href="/Brazil">
+                  <a class="nav-item btn btn-outline-light btn-" onClick={ () => Next() } role="button">
                     Visit Random
                   </a>
                 </ul>
