@@ -4,5 +4,3 @@ in main folder, npm start
 in api folder, npm start
 	for api
 To close: ctrl + c on terminal
-
-NOTE: api is terrible. will hog port 3000.
