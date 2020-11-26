@@ -15,8 +15,8 @@ Introducing Cultured, a website where you choose a country, and you are immersed
 > - Desktop and Mobile Compatible UI
 
 ### Contributers
-> - Aarushi Pandey
-> - Brian Liu
-> - Claire Song
-> - Jordan Frimpter
-> - Zackary Sedlacek
+> - Aarushi Pandey [Aarushi-Pandey]: front end UI design and database integration
+> - Brian Liu [B-Liuh]: backend database organization and interface
+> - Claire Song [minsong108]: back end navigation and research
+> - Jordan Frimpter [Hikaito]: front end UI implementation and backend to frontend integration
+> - Zackary Sedlacek [SedlacekZachary]: backend api imtegration and frontend prototyping
