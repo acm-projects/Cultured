@@ -20,15 +20,15 @@ A demo of our project can be found [here](https://www.youtube.com/watch?v=INW_0w
 
 ### Tech Stack
 > - React
-	- [React.js](https://reactjs.org/) (Frontend)
-	- [NodeJS](https://nodejs.org/en/) (Backend)
-> - [MongoDB](https://www.mongodb.com/) (Database)
+	- [React.js](https://reactjs.org/)\
+	- [NodeJS](https://nodejs.org/en/)
+> - [MongoDB](https://www.mongodb.com/)
 > - APIs
-    - [YouTube API](https://developers.google.com/youtube/v3)
-    - [Contextual Web Search API](https://contextualwebsearch.com/)
-    - [Cloud Translation API](https://cloud.google.com/translate/docs)
-    - [Spoontacular API](https://spoonacular.com/food-api)
-    - [OpenTripMap API](https://opentripmap.io/product)
+    - [YouTube](https://developers.google.com/youtube/v3)
+    - [Contextual Web Search](https://contextualwebsearch.com/)
+    - [Cloud Translation](https://cloud.google.com/translate/docs)
+    - [Spoontacular](https://spoonacular.com/food-api)
+    - [OpenTripMap](https://opentripmap.io/product)
 
 ### Contributers
 > - [Afrida Tasnim](https://github.com/afridatasnim): Project Manager
