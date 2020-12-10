@@ -1,6 +1,5 @@
 # Cultured
 
-### Overview
 Introducing Cultured, a website where you choose a country, and you are immersed in the culture of the country, including news, recipes, music, locations, and more!
 
 ### Features
@@ -14,9 +13,28 @@ Introducing Cultured, a website where you choose a country, and you are immersed
 > - Shows top tourist points for the country
 > - Desktop and Mobile Compatible UI
 
+![Front page of website](https://github.com/acm-projects/Cultured/blob/master/VIEWME/shot%201.PNG?raw=true)
+![Country page - India](https://github.com/acm-projects/Cultured/blob/master/VIEWME/shot%202.PNG?raw=true)
+
+A demo of our project can be found [here](https://www.youtube.com/watch?v=INW_0wNyoPo&t=3675s)
+
+### Tech Stack
+> - React
+	- [React.js](https://reactjs.org/) (Frontend)
+	- [NodeJS](https://nodejs.org/en/) (Backend)
+> - [MongoDB](https://www.mongodb.com/) (Database)
+> - APIs
+    - [YouTube API](https://developers.google.com/youtube/v3)
+    - [Contextual Web Search API](https://contextualwebsearch.com/)
+    - [Cloud Translation API](https://cloud.google.com/translate/docs)
+    - [Spoontacular API](https://spoonacular.com/food-api)
+    - [OpenTripMap API](https://opentripmap.io/product)
+
 ### Contributers
-> - Aarushi Pandey [Aarushi-Pandey]: Front-end UI design and database integration
-> - Brian Liu [B-Liuh]: Back-end database organization and interface
-> - Claire Song [minsong108]: Back-end navigation and research
-> - Jordan Frimpter [Hikaito]: Front-end UI implementation and back-end to front-end integration
-> - Zackary Sedlacek [SedlacekZachary]: Back-end api integration and front-end prototyping
+> - [Afrida Tasnim] (https://github.com/afridatasnim): Project Manager
+
+> - [Aarushi Pandey] (https://github.com/Aarushi-Pandey): Front-end UI design and database integration
+> - [Brian Liu] (https://github.com/B-Liuh): Back-end database organization and interface
+> - [Claire Song] (https://github.com/minsong108): Back-end navigation and research
+> - [Jordan Frimpter] (https://github.com/Hikaito): Front-end UI implementation and back-end to front-end integration
+> - [Zackary Sedlacek] (https://github.com/SedlacekZachary): Back-end api integration and front-end prototyping
