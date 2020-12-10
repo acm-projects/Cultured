@@ -20,7 +20,7 @@ A demo of our project can be found [here](https://www.youtube.com/watch?v=INW_0w
 
 ### Tech Stack
 > - [React.js](https://reactjs.org/)
-> - [NodeJS](https://nodejs.org/en/)
+> - [Node.js](https://nodejs.org/en/)
 > - [MongoDB](https://www.mongodb.com/)
 > - APIs
     - [YouTube](https://developers.google.com/youtube/v3)
