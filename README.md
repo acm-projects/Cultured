@@ -31,10 +31,10 @@ A demo of our project can be found [here](https://www.youtube.com/watch?v=INW_0w
     - [OpenTripMap API](https://opentripmap.io/product)
 
 ### Contributers
-> - [Afrida Tasnim] (https://github.com/afridatasnim): Project Manager
+> - [Afrida Tasnim](https://github.com/afridatasnim): Project Manager
 
-> - [Aarushi Pandey] (https://github.com/Aarushi-Pandey): Front-end UI design and database integration
-> - [Brian Liu] (https://github.com/B-Liuh): Back-end database organization and interface
-> - [Claire Song] (https://github.com/minsong108): Back-end navigation and research
-> - [Jordan Frimpter] (https://github.com/Hikaito): Front-end UI implementation and back-end to front-end integration
-> - [Zackary Sedlacek] (https://github.com/SedlacekZachary): Back-end api integration and front-end prototyping
+> - [Aarushi Pandey](https://github.com/Aarushi-Pandey): Front-end UI design and database integration
+> - [Brian Liu](https://github.com/B-Liuh): Back-end database organization and interface
+> - [Claire Song](https://github.com/minsong108): Back-end navigation and research
+> - [Jordan Frimpter](https://github.com/Hikaito): Front-end UI implementation and back-end to front-end integration
+> - [Zackary Sedlacek](https://github.com/SedlacekZachary): Back-end api integration and front-end prototyping
