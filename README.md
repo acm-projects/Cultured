@@ -19,9 +19,8 @@ Introducing Cultured, a website where you choose a country, and you are immersed
 A demo of our project can be found [here](https://www.youtube.com/watch?v=INW_0wNyoPo&t=3675s)
 
 ### Tech Stack
-> - React
-	- [React.js](https://reactjs.org/)\
-	     - [NodeJS](https://nodejs.org/en/)
+> - [React.js](https://reactjs.org/)
+> - [NodeJS](https://nodejs.org/en/)
 > - [MongoDB](https://www.mongodb.com/)
 > - APIs
     - [YouTube](https://developers.google.com/youtube/v3)
