@@ -25,7 +25,6 @@ A demo of our project can be found [here](https://www.youtube.com/watch?v=INW_0w
 > - APIs
     - [YouTube](https://developers.google.com/youtube/v3)
     - [Contextual Web Search](https://contextualwebsearch.com/)
-    - [Cloud Translation](https://cloud.google.com/translate/docs)
     - [Spoontacular](https://spoonacular.com/food-api)
     - [OpenTripMap](https://opentripmap.io/product)
 
